@@ -1,0 +1,6 @@
+# Robots.txt for Techzyncmedia
+User-agent: *
+Allow: /
+
+# Sitemap Location
+Sitemap: https://techzyncmedia.com/sitemap.xml

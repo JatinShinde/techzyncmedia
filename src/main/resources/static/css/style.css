@@ -676,12 +676,11 @@ select.form-control {
     display: none !important;
   }
 
-  /* 2. Hero Section on Mobile (Image TOP, Content BOTTOM) */
-  /* 2. Hero Section on Mobile (Image TOP Full Edge-to-Edge, Content BOTTOM) */
+  /* 2. Hero Section on Mobile (Image TOP Full Edge-to-Edge with Overlaid Arrows, Content BOTTOM) */
   #heroSection {
     padding-top: 0 !important;
     background: #ffffff !important;
-    overflow: hidden !important;
+    position: relative !important;
   }
 
   #heroSection > div {
@@ -695,7 +694,7 @@ select.form-control {
   }
 
   /* Right Side Image Container -> TOP Edge-to-Edge 100% Full Width */
-  #heroSection > div > div:nth-child(3) {
+  #heroImageContainer {
     order: 1 !important;
     width: 100% !important;
     min-width: 100% !important;
@@ -703,17 +702,19 @@ select.form-control {
     padding: 0 !important;
     margin: 0 !important;
     background: transparent !important;
+    position: relative !important;
   }
 
-  #heroSection > div > div:nth-child(3) > div {
+  #heroImageContainer > div {
     width: 100% !important;
-    height: 220px !important;
-    max-height: 220px !important;
+    height: 230px !important;
+    max-height: 230px !important;
     border-radius: 0 !important;
     border: none !important;
     box-shadow: none !important;
     margin: 0 !important;
     padding: 0 !important;
+    position: relative !important;
   }
 
   #heroSlideImage {
@@ -723,12 +724,47 @@ select.form-control {
     border-radius: 0 !important;
   }
 
+  /* Overlaid Navigation Arrow Buttons on Left & Right edge of image */
+  #heroPrevBtn {
+    position: absolute !important;
+    left: 10px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    z-index: 30 !important;
+    background: rgba(0, 0, 0, 0.7) !important;
+    color: #ffffff !important;
+    width: 38px !important;
+    height: 38px !important;
+    border-radius: 50% !important;
+    border: none !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  #heroNextBtn {
+    position: absolute !important;
+    right: 10px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    z-index: 30 !important;
+    background: rgba(0, 0, 0, 0.7) !important;
+    color: #ffffff !important;
+    width: 38px !important;
+    height: 38px !important;
+    border-radius: 50% !important;
+    border: none !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
   /* Left Content Card Container -> Show on BOTTOM */
   #heroCardContainer {
     order: 2 !important;
     width: 100% !important;
     min-width: 100% !important;
-    padding: 16px 16px 24px 16px !important;
+    padding: 24px 16px 28px 16px !important;
     border-radius: 0 !important;
     box-shadow: none !important;
     background: #ffffff !important;
@@ -739,21 +775,80 @@ select.form-control {
   }
 
   .hero-slide-item h1 {
-    font-size: 1.5rem !important;
+    font-size: 1.55rem !important;
+    font-weight: 800 !important;
     line-height: 1.25 !important;
     margin-bottom: 8px !important;
     color: #0f172a !important;
   }
 
   .hero-slide-item p {
-    font-size: 0.9rem !important;
+    font-size: 0.92rem !important;
     line-height: 1.5 !important;
     color: #475569 !important;
   }
 
-  /* 3. Hide Orange Vertical "Inquire Now" Tab completely on mobile */
+  /* 3. Orange Vertical "Inquire Now" Tab - Pinned on right edge of card */
   .vertical-inquire-tab {
-    display: none !important;
+    display: block !important;
+    position: absolute !important;
+    right: 0 !important;
+    top: 240px !important;
+    background: #e67e22 !important;
+    color: #ffffff !important;
+    padding: 14px 10px !important;
+    writing-mode: vertical-rl !important;
+    text-orientation: mixed !important;
+    font-weight: 700 !important;
+    font-size: 0.85rem !important;
+    border-radius: 6px 0 0 6px !important;
+    z-index: 40 !important;
+    text-decoration: none !important;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2) !important;
+  }
+
+  /* 4. Section 2 ("Business Development & Innovation") Dark Theme Match */
+  .section-light-alt {
+    background: #14171a !important;
+    padding: 40px 16px !important;
+    color: #ffffff !important;
+  }
+
+  .section-light-alt p[style*="text-transform"] {
+    color: #94a3b8 !important;
+    font-size: 0.82rem !important;
+    letter-spacing: 0.1em !important;
+  }
+
+  .section-light-alt h2 {
+    color: #ffffff !important;
+    font-size: 1.5rem !important;
+  }
+
+  .section-light-alt h2 span {
+    color: #ffffff !important;
+  }
+
+  .section-light-alt .profcyma-card {
+    background: #000000 !important;
+    border: 1px solid #2a2f35 !important;
+    border-radius: 14px !important;
+    padding: 28px 20px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+  }
+
+  .section-light-alt .profcyma-card h3 {
+    color: #ffffff !important;
+    font-size: 1.2rem !important;
+  }
+
+  .section-light-alt .profcyma-card p {
+    color: #cbd5e1 !important;
+    font-size: 0.9rem !important;
+  }
+
+  .section-light-alt .card-learn-link {
+    color: #38bdf8 !important;
   }
 }
 

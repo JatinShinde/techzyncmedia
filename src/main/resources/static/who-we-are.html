@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Who We Are | Techzyncmedia IT Solutions & Software Engineering</title>
+  <meta name="description" content="Discover Techzyncmedia - a modern software engineering and digital solutions agency dedicated to building high-performance web applications, Spring Boot APIs, and scalable digital growth engines.">
+  
+  <!-- Social Media & Open Graph Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Techzyncmedia">
+  <meta property="og:title" content="Who We Are | Techzyncmedia Agency Profile">
+  <meta property="og:description" content="Discover our story, engineering team, vision, and enterprise tech stack. Pune, Maharashtra, India.">
+  <meta property="og:image" content="/images/logo.png">
+  <meta property="og:url" content="http://localhost:8080/who-we-are.html">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="/css/style.css?v=5">
+  <style>
+    /* Custom About Page Styles */
+    .about-hero {
+      background: linear-gradient(180deg, #0f172a 0%, #14171a 100%);
+      padding: 100px 0 70px;
+      color: #ffffff;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .pillar-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-lg);
+      padding: 32px 26px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+      transition: var(--transition);
+      height: 100%;
+    }
+    
+    .pillar-card:hover {
+      transform: translateY(-6px);
+      border-color: #2563eb;
+      box-shadow: 0 20px 40px rgba(37, 99, 235, 0.12);
+    }
+    
+    .pillar-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+      color: #2563eb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+
+    .process-step {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-md);
+      padding: 28px;
+      position: relative;
+      transition: var(--transition);
+    }
+
+    .process-step:hover {
+      border-color: #38bdf8;
+      box-shadow: 0 12px 30px rgba(56, 189, 248, 0.15);
+    }
+
+    .step-number {
+      position: absolute;
+      top: -16px;
+      left: 24px;
+      background: linear-gradient(135deg, #0f172a 0%, #2563eb 100%);
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 0.85rem;
+      padding: 4px 14px;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+    }
+
+    .stat-box {
+      background: #0f172a;
+      border: 1px solid #1e293b;
+      border-radius: var(--radius-md);
+      padding: 30px 20px;
+      text-align: center;
+      color: #ffffff;
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #38bdf8;
+      line-height: 1.1;
+      margin-bottom: 8px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation Bar Header (Profcyma Style) -->
+  <header class="header" style="background:#0f172a; border-bottom:1px solid #1e293b; padding:16px 0;">
+    <div class="container nav-container">
+      <a href="/" class="logo" style="display:flex; align-items:center; gap:12px;">
+        <img src="/images/logo.png" alt="Techzyncmedia Logo" style="height:46px; width:auto; object-fit:contain;">
+        <span style="color:#ffffff; font-weight:800; font-size:1.3rem;">Techzync<span style="color:#38bdf8;">media</span></span>
+      </a>
+      <nav class="nav-links">
+        <a href="/index.html" class="nav-link">Home</a>
+        <a href="/who-we-are.html" class="nav-link active" style="color:#38bdf8;">Who We Are</a>
+        <a href="/it-solutions.html" class="nav-link">IT Solutions</a>
+        <a href="/technologies.html" class="nav-link">Technologies</a>
+        <a href="/blogs.html" class="nav-link">Blogs</a>
+        <a href="/career.html" class="nav-link">Career</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="/contact.html" class="btn btn-primary btn-sm" style="background:#000000; color:#ffffff; border-radius:4px; padding:10px 24px; font-weight:700;">Contact Us</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="about-hero">
+    <div class="container" style="max-width:1200px;">
+      <div style="text-align:center; max-width:850px; margin:0 auto;">
+        <div style="display:inline-block; background:rgba(56, 189, 248, 0.12); border:1px solid rgba(56, 189, 248, 0.3); color:#38bdf8; font-size:0.85rem; font-weight:700; padding:6px 18px; border-radius:30px; margin-bottom:20px; text-transform:uppercase; letter-spacing:0.05em;">
+          Engineering Excellence & Digital Growth
+        </div>
+        <h1 style="font-size:3rem; font-weight:800; line-height:1.2; margin-bottom:20px; font-family:'Plus Jakarta Sans', sans-serif;">
+          Empowering Businesses with <span style="color:#38bdf8;">High-Performance</span> Software & IT Solutions
+        </h1>
+        <p style="font-size:1.15rem; color:#94a3b8; line-height:1.7; margin-bottom:30px;">
+          Techzyncmedia is a specialized software engineering agency. We design, architect, and deploy lightning-fast web applications, Spring Boot REST APIs, and digital marketing engines engineered to convert visitors into loyal customers.
+        </p>
+        <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap;">
+          <a href="/contact.html" class="btn btn-primary" style="background:#2563eb; padding:14px 32px; font-weight:700; border-radius:8px;">Start a Project</a>
+          <a href="/it-solutions.html" class="btn btn-outline" style="border-color:#38bdf8; color:#ffffff; padding:14px 32px; font-weight:700; border-radius:8px;">Explore IT Solutions</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission & Vision Section -->
+  <section style="background:#f8fafc; padding:80px 0; border-bottom:1px solid #e2e8f0;">
+    <div class="container" style="max-width:1200px;">
+      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap:30px;">
+        
+        <!-- Mission -->
+        <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:16px; padding:40px 32px; box-shadow:0 10px 30px rgba(0,0,0,0.04);">
+          <div style="width:48px; height:48px; border-radius:12px; background:#eff6ff; color:#2563eb; display:flex; align-items:center; justify-content:center; font-size:1.4rem; margin-bottom:20px;">
+            🎯
+          </div>
+          <h2 style="font-size:1.5rem; font-weight:800; color:#0f172a; margin-bottom:14px;">Our Mission</h2>
+          <p style="color:#64748b; font-size:1rem; line-height:1.7;">
+            To empower startups and growing enterprises by developing custom web software, secure Java backends, and data-driven marketing systems that drive measurable growth, eliminate technical friction, and deliver exceptional ROI.
+          </p>
+        </div>
+
+        <!-- Vision -->
+        <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:16px; padding:40px 32px; box-shadow:0 10px 30px rgba(0,0,0,0.04);">
+          <div style="width:48px; height:48px; border-radius:12px; background:#f0fdf4; color:#16a34a; display:flex; align-items:center; justify-content:center; font-size:1.4rem; margin-bottom:20px;">
+            🔭
+          </div>
+          <h2 style="font-size:1.5rem; font-weight:800; color:#0f172a; margin-bottom:14px;">Our Vision</h2>
+          <p style="color:#64748b; font-size:1rem; line-height:1.7;">
+            To be recognized globally as a trusted IT engineering agency known for uncompromised application speed, rock-solid security, clean architecture, and rapid deployment cycles.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Engineering Pillars -->
+  <section style="padding:90px 0; background:#ffffff;">
+    <div class="container" style="max-width:1200px;">
+      <div style="text-align:center; max-width:700px; margin:0 auto 60px;">
+        <span style="color:#2563eb; font-weight:700; font-size:0.9rem; text-transform:uppercase; letter-spacing:0.05em;">Why Choose Techzyncmedia</span>
+        <h2 style="font-size:2.2rem; font-weight:800; color:#0f172a; margin-top:8px;">Our 4 Core Engineering Pillars</h2>
+        <p style="color:#64748b; font-size:1rem; margin-top:10px;">We hold every project to rigorous technical standards to guarantee business performance.</p>
+      </div>
+
+      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:24px;">
+        
+        <div class="pillar-card">
+          <div class="pillar-icon">⚡</div>
+          <h3 style="font-size:1.2rem; font-weight:800; color:#0f172a; margin-bottom:10px;">Speed & Optimization</h3>
+          <p style="color:#64748b; font-size:0.92rem; line-height:1.6;">
+            We eliminate unnecessary framework overhead. Our web applications achieve sub-100ms API latency and top Core Web Vitals scores.
+          </p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon">🛡️</div>
+          <h3 style="font-size:1.2rem; font-weight:800; color:#0f172a; margin-bottom:10px;">Enterprise Security</h3>
+          <p style="color:#64748b; font-size:0.92rem; line-height:1.6;">
+            Architected with Spring Security, BCrypt password hashing, JWT authentication, and SSL compliance to safeguard your business data.
+          </p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon">📈</div>
+          <h3 style="font-size:1.2rem; font-weight:800; color:#0f172a; margin-bottom:10px;">Scalable Architecture</h3>
+          <p style="color:#64748b; font-size:0.92rem; line-height:1.6;">
+            Decoupled REST APIs and indexed relational MySQL database entity schemas designed to handle growing traffic seamlessly.
+          </p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon">🤝</div>
+          <h3 style="font-size:1.2rem; font-weight:800; color:#0f172a; margin-bottom:10px;">Agile Client Support</h3>
+          <p style="color:#64748b; font-size:0.92rem; line-height:1.6;">
+            Transparent communication, milestone deliverables, and dedicated 24/7 technical support for every project we build.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Development Methodology / Process -->
+  <section style="background:#0f172a; padding:90px 0; color:#ffffff;">
+    <div class="container" style="max-width:1200px;">
+      <div style="text-align:center; max-width:700px; margin:0 auto 60px;">
+        <span style="color:#38bdf8; font-weight:700; font-size:0.9rem; text-transform:uppercase; letter-spacing:0.05em;">How We Work</span>
+        <h2 style="font-size:2.2rem; font-weight:800; color:#ffffff; margin-top:8px;">Our Agile Delivery Process</h2>
+        <p style="color:#94a3b8; font-size:1rem; margin-top:10px;">From concept to production, we follow a structured 4-step deployment methodology.</p>
+      </div>
+
+      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:24px;">
+        
+        <div class="process-step">
+          <span class="step-number">STEP 1</span>
+          <h4 style="font-size:1.1rem; font-weight:800; color:#0f172a; margin-top:10px; margin-bottom:10px;">Discovery & Scope</h4>
+          <p style="color:#64748b; font-size:0.9rem; line-height:1.6;">
+            We analyze your business goals, target audience, technical specifications, and build a clear architectural blueprint.
+          </p>
+        </div>
+
+        <div class="process-step">
+          <span class="step-number">STEP 2</span>
+          <h4 style="font-size:1.1rem; font-weight:800; color:#0f172a; margin-top:10px; margin-bottom:10px;">UI/UX & DB Schema</h4>
+          <p style="color:#64748b; font-size:0.9rem; line-height:1.6;">
+            Crafting responsive user interface prototypes paired with efficient relational database schemas and REST endpoint specs.
+          </p>
+        </div>
+
+        <div class="process-step">
+          <span class="step-number">STEP 3</span>
+          <h4 style="font-size:1.1rem; font-weight:800; color:#0f172a; margin-top:10px; margin-bottom:10px;">Full-Stack Engineering</h4>
+          <p style="color:#64748b; font-size:0.9rem; line-height:1.6;">
+            Developing production-ready Java Spring Boot microservices integrated with optimized semantic frontend components.
+          </p>
+        </div>
+
+        <div class="process-step">
+          <span class="step-number">STEP 4</span>
+          <h4 style="font-size:1.1rem; font-weight:800; color:#0f172a; margin-top:10px; margin-bottom:10px;">QA & Live Deployment</h4>
+          <p style="color:#64748b; font-size:0.9rem; line-height:1.6;">
+            Conducting security audits, performance testing, SSL configuration, and launching your platform live to the world.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Infrastructure & Stats -->
+  <section style="background:#f8fafc; padding:80px 0; border-top:1px solid #e2e8f0; border-bottom:1px solid #e2e8f0;">
+    <div class="container" style="max-width:1200px;">
+      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:20px;">
+        
+        <div class="stat-box">
+          <div class="stat-number">99.9%</div>
+          <div style="font-size:0.95rem; font-weight:700; color:#cbd5e1;">Target Uptime SLA</div>
+          <div style="font-size:0.8rem; color:#94a3b8; margin-top:4px;">Reliable Cloud Hosting</div>
+        </div>
+
+        <div class="stat-box">
+          <div class="stat-number">&lt; 100ms</div>
+          <div style="font-size:0.95rem; font-weight:700; color:#cbd5e1;">API Response Latency</div>
+          <div style="font-size:0.8rem; color:#94a3b8; margin-top:4px;">Optimized Backend Execution</div>
+        </div>
+
+        <div class="stat-box">
+          <div class="stat-number">100%</div>
+          <div style="font-size:0.95rem; font-weight:700; color:#cbd5e1;">Data Protection</div>
+          <div style="font-size:0.8rem; color:#94a3b8; margin-top:4px;">Spring Security & SSL</div>
+        </div>
+
+        <div class="stat-box">
+          <div class="stat-number">24/7</div>
+          <div style="font-size:0.95rem; font-weight:700; color:#cbd5e1;">Dedicated Support</div>
+          <div style="font-size:0.8rem; color:#94a3b8; margin-top:4px;">Continuous Assistance</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Call To Action (CTA) Section -->
+  <section style="background:linear-gradient(135deg, #0f172a 0%, #1e293b 100%); padding:90px 0; color:#ffffff; text-align:center;">
+    <div class="container" style="max-width:800px;">
+      <h2 style="font-size:2.4rem; font-weight:800; margin-bottom:16px;">Ready to Scale Your Digital Presence?</h2>
+      <p style="font-size:1.1rem; color:#94a3b8; line-height:1.6; margin-bottom:32px;">
+        Let’s collaborate to build a custom, high-speed web application or launch your next software solution.
+      </p>
+      <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap;">
+        <a href="/contact.html" class="btn btn-primary" style="background:#2563eb; padding:14px 36px; font-weight:700; border-radius:8px;">Contact Our Team</a>
+        <a href="/index.html#audit-section" class="btn btn-outline" style="border-color:#38bdf8; color:#ffffff; padding:14px 36px; font-weight:700; border-radius:8px;">Get a Free Web Audit</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" style="background:#070a12; padding:60px 0 20px; border-top:1px solid #1e293b; color:#94a3b8;">
+    <div class="container" style="max-width:1200px;">
+      <div class="footer-grid" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:40px;">
+        <div>
+          <a href="/" class="logo" style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
+            <img src="/images/logo.png" alt="Techzyncmedia Logo" style="height:44px; width:auto; object-fit:contain;">
+            <span style="color:#ffffff; font-weight:800; font-size:1.3rem;">Techzync<span style="color:#38bdf8;">media</span></span>
+          </a>
+          <p style="font-size:0.88rem; color:#94a3b8; line-height:1.6;">
+            High-performance web architecture, Spring Boot API engineering, SEO, and digital growth systems.
+          </p>
+        </div>
+
+        <div>
+          <h4 style="font-size:0.95rem; font-weight:700; margin-bottom:16px; color:#ffffff;">Quick Links</h4>
+          <ul style="display:flex; flex-direction:column; gap:10px; font-size:0.88rem; color:#94a3b8;">
+            <li><a href="/index.html" style="color:#94a3b8;">Home</a></li>
+            <li><a href="/who-we-are.html" style="color:#94a3b8;">Who We Are</a></li>
+            <li><a href="/it-solutions.html" style="color:#94a3b8;">IT Solutions</a></li>
+            <li><a href="/technologies.html" style="color:#94a3b8;">Technologies</a></li>
+            <li><a href="/blogs.html" style="color:#94a3b8;">Blogs</a></li>
+            <li><a href="/career.html" style="color:#94a3b8;">Career</a></li>
+            <li><a href="/contact.html" style="color:#94a3b8;">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="font-size:0.95rem; font-weight:700; margin-bottom:16px; color:#ffffff;">Legal & Policies</h4>
+          <ul style="display:flex; flex-direction:column; gap:10px; font-size:0.88rem; color:#94a3b8;">
+            <li><a href="/privacy-policy.html" style="color:#94a3b8;">Privacy Policy</a></li>
+            <li><a href="/terms-conditions.html" style="color:#94a3b8;">Terms & Conditions</a></li>
+            <li><a href="/refund-cancellation-policy.html" style="color:#94a3b8;">Refund & Cancellation</a></li>
+            <li><a href="/service-delivery-policy.html" style="color:#94a3b8;">Service Delivery Policy</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="font-size:0.95rem; font-weight:700; margin-bottom:16px; color:#ffffff;">Support & Business</h4>
+          <p style="font-size:0.88rem; color:#94a3b8;">Email: <a href="mailto:contact@techzyncmedia.com" style="color:#38bdf8;">contact@techzyncmedia.com</a></p>
+          <p style="font-size:0.88rem; color:#94a3b8; margin-top:6px;">Phone: +91 9372266379</p>
+          <p style="font-size:0.88rem; color:#94a3b8; margin-top:6px;">Location: Online Agency - Pune, Maharashtra</p>
+          <p style="font-size:0.88rem; color:#94a3b8; margin-top:6px;"><a href="/admin.html" style="color:#38bdf8;">Admin Portal</a></p>
+        </div>
+      </div>
+
+      <div class="footer-bottom" style="border-top:1px solid #1e293b; color:#94a3b8; margin-top:50px; padding-top:20px; display:flex; justify-content:space-between; flex-wrap:wrap; font-size:0.85rem;">
+        <span>&copy; 2026 Techzyncmedia. All rights reserved.</span>
+        <span>Secured with SSL & Razorpay PCI-DSS Compliance</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Email CTA Widget -->
+  <a href="mailto:contact@techzyncmedia.com" class="email-float" aria-label="Email Us">
+    <div class="email-pulse"></div>
+    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+    </svg>
+    Email Us (contact@techzyncmedia.com)
+  </a>
+
+  <script src="/js/app.js"></script>
+  <script src="/js/chatbot.js" defer></script>
+</body>
+</html>

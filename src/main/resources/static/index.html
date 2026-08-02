@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Techzyncmedia | Enterprise IT Solutions & Web Architecture</title>
+  <meta name="description" content="Techzyncmedia delivers custom web development, mobile apps, Spring Boot APIs, SEO, UI/UX, and social media management to help businesses scale.">
+  
+  <!-- Social Media & Open Graph Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Techzyncmedia">
+  <meta property="og:title" content="Techzyncmedia | Enterprise IT Solutions & Web Architecture">
+  <meta property="og:description" content="High-performance Web Architecture, Java Spring Boot APIs, SEO, and Digital Growth Systems. Pune, India.">
+  <meta property="og:image" content="/images/logo.png">
+  <meta property="og:url" content="http://localhost:8080/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Techzyncmedia | Enterprise IT Solutions">
+  <meta name="twitter:description" content="High-performance Web Architecture, Spring Boot APIs, and Digital Growth.">
+  <meta name="twitter:image" content="/images/logo.png">
+
+  <link rel="stylesheet" href="/css/style.css?v=10">
+  <style>
+    /* Profcyma Global Scoped Layout System */
+    .profcyma-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-lg);
+      padding: 36px 30px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+      transition: var(--transition);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .profcyma-card:hover {
+      border-color: #2563eb;
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(37, 99, 235, 0.12);
+    }
+    .section-light-alt {
+      background: #f8fafc;
+      padding: 90px 0;
+    }
+    .trust-cert-badge {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      padding: 16px 24px;
+      border-radius: var(--radius-md);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #0f172a;
+    }
+    .card-learn-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #2563eb;
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-top: 16px;
+      transition: var(--transition);
+    }
+    .card-learn-link:hover {
+      gap: 10px;
+      color: #1d4ed8;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation Bar Header (Profcyma Style) -->
+  <header class="header" style="background:#0f172a; border-bottom:1px solid #1e293b; padding:16px 0;">
+    <div class="container nav-container">
+      <a href="/" class="logo" style="display:flex; align-items:center; gap:12px;">
+        <img src="/images/logo.png" alt="Techzyncmedia Logo" style="height:46px; width:auto; object-fit:contain;">
+        <span style="color:#ffffff; font-weight:800; font-size:1.3rem;">Techzync<span style="color:#38bdf8;">media</span></span>
+      </a>
+      <nav class="nav-links">
+        <a href="/index.html" class="nav-link active" style="color:#38bdf8;">Home</a>
+        <a href="/who-we-are.html" class="nav-link">Who We Are</a>
+        <a href="/it-solutions.html" class="nav-link">IT Solutions</a>
+        <a href="/technologies.html" class="nav-link">Technologies</a>
+        <a href="/blogs.html" class="nav-link">Blogs</a>
+        <a href="/career.html" class="nav-link">Career</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="/contact.html" class="btn btn-primary btn-sm" style="background:#000000; color:#ffffff; border-radius:4px; padding:10px 24px; font-weight:700;">Contact Us</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Profcyma Global Exact Hero Section Slider -->
+  <section id="heroSection" style="background:#14171a; position:relative; overflow:hidden; padding-top:70px;">
+    <!-- Vertical "Inquire Now" Orange Side Tab -->
+    <a href="/contact.html" class="vertical-inquire-tab">Inquire Now</a>
+    <div style="max-width:1400px; margin:0 auto; display:flex; min-height:500px; position:relative; flex-wrap:wrap;">
+      
+      <!-- Left White Card Box Overlay -->
+      <div id="heroCardContainer" style="width:42%; min-width:340px; background:#ffffff; padding:56px 44px; display:flex; flex-direction:column; justify-content:space-between; z-index:10; border-radius:0 0 24px 0; box-shadow:5px 0 25px rgba(0,0,0,0.15);">
+        
+        <div id="heroSliderContent" style="min-height:210px; position:relative;">
+          <!-- Slide 1 -->
+          <div class="hero-slide-item active" style="display:block;" data-img="/images/hero1.png">
+            <h1 style="font-size:2.8rem; font-weight:800; color:#0f172a; line-height:1.2; margin-bottom:20px; font-family:'Plus Jakarta Sans', Georgia, sans-serif;">
+              Techzyncmedia <span style="position:relative; display:inline-block;">is<span style="position:absolute; bottom:-4px; left:0; width:100%; height:4px; background:#0052cc; border-radius:2px;"></span></span>
+            </h1>
+            <p style="font-size:1.1rem; color:#334155; line-height:1.6; font-weight:500; margin-bottom:0;">
+              IT solutions & services company, best agency, business, digital, network solution.
+            </p>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="hero-slide-item" style="display:none;" data-img="/images/hero2.png">
+            <h1 style="font-size:2.8rem; font-weight:800; color:#0f172a; line-height:1.2; margin-bottom:20px; font-family:'Plus Jakarta Sans', Georgia, sans-serif;">
+              Your Technology Partner for <span style="position:relative; display:inline-block;">Tomorrow<span style="position:absolute; bottom:-4px; left:0; width:100%; height:4px; background:#0052cc; border-radius:2px;"></span></span>
+            </h1>
+            <p style="font-size:1.1rem; color:#334155; line-height:1.6; font-weight:500; margin-bottom:0;">
+              Empowering businesses with Cutting-edge IT solutions & scalable web engineering.
+            </p>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="hero-slide-item" style="display:none;" data-img="/images/hero3.png">
+            <h1 style="font-size:2.8rem; font-weight:800; color:#0f172a; line-height:1.2; margin-bottom:20px; font-family:'Plus Jakarta Sans', Georgia, sans-serif;">
+              Transforming Ideas Into <span style="position:relative; display:inline-block;">Reality<span style="position:absolute; bottom:-4px; left:0; width:100%; height:4px; background:#0052cc; border-radius:2px;"></span></span>
+            </h1>
+            <p style="font-size:1.1rem; color:#334155; line-height:1.6; font-weight:500; margin-bottom:0;">
+              Full-stack Spring Boot APIs, 100/100 Lighthouse web apps, and enterprise cloud systems.
+            </p>
+          </div>
+
+          <!-- Slide 4 -->
+          <div class="hero-slide-item" style="display:none;" data-img="/images/hero4.png">
+            <h1 style="font-size:2.8rem; font-weight:800; color:#0f172a; line-height:1.2; margin-bottom:20px; font-family:'Plus Jakarta Sans', Georgia, sans-serif;">
+              Custom Mobile & Web <span style="position:relative; display:inline-block;">Platforms<span style="position:absolute; bottom:-4px; left:0; width:100%; height:4px; background:#0052cc; border-radius:2px;"></span></span>
+            </h1>
+            <p style="font-size:1.1rem; color:#334155; line-height:1.6; font-weight:500; margin-bottom:0;">
+              High-performance client portals, iOS/Android applications, and sleek UI/UX design.
+            </p>
+          </div>
+
+          <!-- Slide 5 -->
+          <div class="hero-slide-item" style="display:none;" data-img="/images/hero5.png">
+            <h1 style="font-size:2.8rem; font-weight:800; color:#0f172a; line-height:1.2; margin-bottom:20px; font-family:'Plus Jakarta Sans', Georgia, sans-serif;">
+              Data-Driven Digital <span style="position:relative; display:inline-block;">Growth<span style="position:absolute; bottom:-4px; left:0; width:100%; height:4px; background:#0052cc; border-radius:2px;"></span></span>
+            </h1>
+            <p style="font-size:1.1rem; color:#334155; line-height:1.6; font-weight:500; margin-bottom:0;">
+              Technical SEO, targeted PPC search campaigns, social media management, and lead funnels.
+            </p>
+          </div>
+        </div>
+
+        <!-- Arrow Navigation Buttons -->
+        <div style="display:flex; align-items:center; gap:12px; margin-top:40px;">
+          <button id="heroPrevBtn" onclick="switchHeroSlide(-1)" style="width:44px; height:44px; border-radius:50%; background:#000000; color:#ffffff; border:none; display:flex; align-items:center; justify-content:center; cursor:pointer; transition:all 0.2s ease;" aria-label="Previous Slide">
+            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/></svg>
+          </button>
+          <button id="heroNextBtn" onclick="switchHeroSlide(1)" style="width:44px; height:44px; border-radius:50%; background:#000000; color:#ffffff; border:none; display:flex; align-items:center; justify-content:center; cursor:pointer; transition:all 0.2s ease;" aria-label="Next Slide">
+            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Right Side Dark Container with Rounded Image Frame -->
+      <div style="width:58%; min-width:340px; background:#14171a; display:flex; align-items:center; justify-content:center; padding:30px 40px;">
+        <div style="width:100%; height:420px; border-radius:24px; overflow:hidden; border:2px solid #2a2f35; box-shadow:0 20px 50px rgba(0,0,0,0.6);">
+          <img id="heroSlideImage" src="/images/hero1.png" alt="Techzyncmedia IT Agency" style="width:100%; height:100%; object-fit:cover; transition:opacity 0.35s ease;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 Value Pillars Section (We are Innovators) -->
+  <section class="section-light-alt">
+    <div class="container">
+      <div style="text-align:center; max-width:700px; margin:0 auto 48px auto;">
+        <p style="color:#2563eb; font-weight:800; font-size:0.9rem; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:8px;">Business Development & Innovation</p>
+        <h2 style="font-size:2.2rem; font-weight:900; color:#0f172a;">Building Digital Assets That <span style="color:#2563eb;">Drive Progress</span></h2>
+      </div>
+
+      <div class="pillar-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:28px;">
+        <div class="profcyma-card" style="text-align:center;">
+          <div>
+            <div style="font-size:2.8rem; margin-bottom:16px;">📈</div>
+            <h3 style="font-size:1.25rem; font-weight:800; color:#0f172a; margin-bottom:12px;">Strategic Growth Solutions</h3>
+            <p style="color:#475569; font-size:0.93rem; line-height:1.6;">Developing customized strategies to empower businesses to grow, streamline operations, and succeed in digital markets.</p>
+          </div>
+          <a href="/it-solutions.html" class="card-learn-link" style="justify-content:center;">Explore Solutions →</a>
+        </div>
+
+        <div class="profcyma-card" style="text-align:center;">
+          <div>
+            <div style="font-size:2.8rem; margin-bottom:16px;">⚙️</div>
+            <h3 style="font-size:1.25rem; font-weight:800; color:#0f172a; margin-bottom:12px;">Cutting-Edge Integration</h3>
+            <p style="color:#475569; font-size:0.93rem; line-height:1.6;">Leveraging Java Spring Boot 3, modern CSS design tokens, and cloud infrastructure for high efficiency and speed.</p>
+          </div>
+          <a href="/it-solutions.html" class="card-learn-link" style="justify-content:center;">Explore Tech Stack →</a>
+        </div>
+
+        <div class="profcyma-card" style="text-align:center;">
+          <div>
+            <div style="font-size:2.8rem; margin-bottom:16px;">🚀</div>
+            <h3 style="font-size:1.25rem; font-weight:800; color:#0f172a; margin-bottom:12px;">Future-Driven Innovation</h3>
+            <p style="color:#475569; font-size:0.93rem; line-height:1.6;">Anticipating market challenges with visionary engineering ideas and sustainable IT solutions that keep you ahead.</p>
+          </div>
+          <a href="/who-we-are.html" class="card-learn-link" style="justify-content:center;">Who We Are →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Grow Your Business Section -->
+  <section class="section" style="background:#ffffff; padding:90px 0;">
+    <div class="container">
+      <div class="hero-grid" style="grid-template-columns:1fr 1fr; gap:50px; align-items:center;">
+        <div>
+          <span style="display:inline-block; padding:6px 16px; background:#eff6ff; border:1px solid #bfdbfe; color:#2563eb; font-weight:700; font-size:0.85rem; border-radius:var(--radius-full); margin-bottom:16px;">Empowering Businesses</span>
+          <h2 style="font-size:2.4rem; font-weight:900; color:#0f172a; margin-bottom:20px; line-height:1.2;">
+            Grow Your Business With <span style="color:#2563eb;">Techzyncmedia</span>
+          </h2>
+          <p style="color:#475569; font-size:1.05rem; line-height:1.7; margin-bottom:28px;">
+            Unlock your full potential with tailored IT solutions, cutting-edge software architecture, and dedicated engineering support. We work closely with our clients to optimize business processes and achieve sustainable success.
+          </p>
+          <a href="/contact.html" class="btn btn-primary" style="background:#2563eb; padding:14px 36px; border-radius:var(--radius-full);">Contact Us</a>
+        </div>
+
+        <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:var(--radius-lg); padding:36px; box-shadow:0 10px 30px rgba(0, 0, 0, 0.05);">
+          <div style="margin-bottom:28px; border-bottom:1px solid #e2e8f0; padding-bottom:20px;">
+            <h4 style="font-size:1.2rem; font-weight:800; color:#2563eb; margin-bottom:8px;">🎯 Our Vision</h4>
+            <p style="color:#475569; font-size:0.95rem; line-height:1.6;">To be a trusted global partner in delivering transformative web architecture, backend APIs, and digital marketing solutions.</p>
+          </div>
+          <div>
+            <h4 style="font-size:1.2rem; font-weight:800; color:#059669; margin-bottom:8px;">🚀 Our Mission</h4>
+            <p style="color:#475569; font-size:0.95rem; line-height:1.6;">Empowering companies with fast technology, transparent proposals, and 24/7 ongoing engineering support.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tailored IT Solutions (8 Dark Service Cards Grid) -->
+  <section class="solutions-dark-section" id="it-solutions" style="background:#14171a !important; padding:80px 0; position:relative;">
+    <div class="container">
+      <h2 class="solutions-section-title" style="color:#ffffff !important; font-size:2.1rem; font-weight:700; text-align:center; margin-bottom:48px; font-family:'Plus Jakarta Sans', sans-serif;">Empowering growth through digital solutions.</h2>
+
+      <div class="solutions-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:24px;">
+        <!-- Card 1: Website Development -->
+        <div class="solution-dark-card" style="background:#090b0d; border:1px solid #1e242b; border-radius:16px; padding:16px; display:flex; align-items:center; gap:16px; min-height:135px; box-shadow:0 10px 25px rgba(0,0,0,0.4);">
+          <div class="solution-card-img-wrap" style="width:44%; min-width:130px; height:105px; border-radius:12px; overflow:hidden; flex-shrink:0;">
+            <img src="/images/solution_website.png" alt="Website Development" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="solution-card-content" style="flex:1; display:flex; flex-direction:column; justify-content:space-between; height:105px;">
+            <h3 class="solution-card-title" style="color:#ffffff; font-size:1.15rem; font-weight:800; margin:0; line-height:1.25; font-family:'Plus Jakarta Sans', sans-serif;">Website Development</h3>
+            <a href="/solutions/website-development.html" class="solution-card-link" style="display:inline-flex; align-items:center; gap:8px; color:#94a3b8; font-size:0.85rem; font-weight:600; text-decoration:none; margin-top:auto;">
+              Explore Solution <span class="solution-card-link-icon" style="display:inline-flex; align-items:center; justify-content:center; background:#272e38; color:#ffffff; width:24px; height:24px; border-radius:4px; font-size:0.8rem;">➔</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 2: App Development -->
+        <div class="solution-dark-card" style="background:#090b0d; border:1px solid #1e242b; border-radius:16px; padding:16px; display:flex; align-items:center; gap:16px; min-height:135px; box-shadow:0 10px 25px rgba(0,0,0,0.4);">
+          <div class="solution-card-img-wrap" style="width:44%; min-width:130px; height:105px; border-radius:12px; overflow:hidden; flex-shrink:0;">
+            <img src="/images/solution_app.png" alt="App Development" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="solution-card-content" style="flex:1; display:flex; flex-direction:column; justify-content:space-between; height:105px;">
+            <h3 class="solution-card-title" style="color:#ffffff; font-size:1.15rem; font-weight:800; margin:0; line-height:1.25; font-family:'Plus Jakarta Sans', sans-serif;">App Development</h3>
+            <a href="/solutions/app-development.html" class="solution-card-link" style="display:inline-flex; align-items:center; gap:8px; color:#94a3b8; font-size:0.85rem; font-weight:600; text-decoration:none; margin-top:auto;">
+              Explore Solution <span class="solution-card-link-icon" style="display:inline-flex; align-items:center; justify-content:center; background:#272e38; color:#ffffff; width:24px; height:24px; border-radius:4px; font-size:0.8rem;">➔</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 3: Digital Marketing -->
+        <div class="solution-dark-card" style="background:#090b0d; border:1px solid #1e242b; border-radius:16px; padding:16px; display:flex; align-items:center; gap:16px; min-height:135px; box-shadow:0 10px 25px rgba(0,0,0,0.4);">
+          <div class="solution-card-img-wrap" style="width:44%; min-width:130px; height:105px; border-radius:12px; overflow:hidden; flex-shrink:0;">
+            <img src="/images/solution_marketing.png" alt="Digital Marketing" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="solution-card-content" style="flex:1; display:flex; flex-direction:column; justify-content:space-between; height:105px;">
+            <h3 class="solution-card-title" style="color:#ffffff; font-size:1.15rem; font-weight:800; margin:0; line-height:1.25; font-family:'Plus Jakarta Sans', sans-serif;">Digital Marketing</h3>
+            <a href="/solutions/digital-marketing.html" class="solution-card-link" style="display:inline-flex; align-items:center; gap:8px; color:#94a3b8; font-size:0.85rem; font-weight:600; text-decoration:none; margin-top:auto;">
+              Explore Solution <span class="solution-card-link-icon" style="display:inline-flex; align-items:center; justify-content:center; background:#272e38; color:#ffffff; width:24px; height:24px; border-radius:4px; font-size:0.8rem;">➔</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 4: UI/UX Design -->
+        <div class="solution-dark-card" style="background:#090b0d; border:1px solid #1e242b; border-radius:16px; padding:16px; display:flex; align-items:center; gap:16px; min-height:135px; box-shadow:0 10px 25px rgba(0,0,0,0.4);">
+          <div class="solution-card-img-wrap" style="width:44%; min-width:130px; height:105px; border-radius:12px; overflow:hidden; flex-shrink:0;">
+            <img src="/images/solution_uiux.png" alt="UI/UX Design" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="solution-card-content" style="flex:1; display:flex; flex-direction:column; justify-content:space-between; height:105px;">
+            <h3 class="solution-card-title" style="color:#ffffff; font-size:1.15rem; font-weight:800; margin:0; line-height:1.25; font-family:'Plus Jakarta Sans', sans-serif;">UI/UX Design</h3>
+            <a href="/solutions/uiux-design.html" class="solution-card-link" style="display:inline-flex; align-items:center; gap:8px; color:#94a3b8; font-size:0.85rem; font-weight:600; text-decoration:none; margin-top:auto;">
+              Explore Solution <span class="solution-card-link-icon" style="display:inline-flex; align-items:center; justify-content:center; background:#272e38; color:#ffffff; width:24px; height:24px; border-radius:4px; font-size:0.8rem;">➔</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 5: Software Development -->
+        <div class="solution-dark-card" style="background:#090b0d; border:1px solid #1e242b; border-radius:16px; padding:16px; display:flex; align-items:center; gap:16px; min-height:135px; box-shadow:0 10px 25px rgba(0,0,0,0.4);">
+          <div class="solution-card-img-wrap" style="width:44%; min-width:130px; height:105px; border-radius:12px; overflow:hidden; flex-shrink:0;">
+            <img src="/images/solution_software.png" alt="Software Development" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="solution-card-content" style="flex:1; display:flex; flex-direction:column; justify-content:space-between; height:105px;">
+            <h3 class="solution-card-title" style="color:#ffffff; font-size:1.15rem; font-weight:800; margin:0; line-height:1.25; font-family:'Plus Jakarta Sans', sans-serif;">Software Development</h3>
+            <a href="/solutions/software-development.html" class="solution-card-link" style="display:inline-flex; align-items:center; gap:8px; color:#94a3b8; font-size:0.85rem; font-weight:600; text-decoration:none; margin-top:auto;">
+              Explore Solution <span class="solution-card-link-icon" style="display:inline-flex; align-items:center; justify-content:center; background:#272e38; color:#ffffff; width:24px; height:24px; border-radius:4px; font-size:0.8rem;">➔</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 6: Brand Awareness -->
+        <div class="solution-dark-card" style="background:#090b0d; border:1px solid #1e242b; border-radius:16px; padding:16px; display:flex; align-items:center; gap:16px; min-height:135px; box-shadow:0 10px 25px rgba(0,0,0,0.4);">
+          <div class="solution-card-img-wrap" style="width:44%; min-width:130px; height:105px; border-radius:12px; overflow:hidden; flex-shrink:0;">
+            <img src="/images/solution_brand.png" alt="Brand Awareness" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="solution-card-content" style="flex:1; display:flex; flex-direction:column; justify-content:space-between; height:105px;">
+            <h3 class="solution-card-title" style="color:#ffffff; font-size:1.15rem; font-weight:800; margin:0; line-height:1.25; font-family:'Plus Jakarta Sans', sans-serif;">Brand Awareness</h3>
+            <a href="/solutions/brand-awareness.html" class="solution-card-link" style="display:inline-flex; align-items:center; gap:8px; color:#94a3b8; font-size:0.85rem; font-weight:600; text-decoration:none; margin-top:auto;">
+              Explore Solution <span class="solution-card-link-icon" style="display:inline-flex; align-items:center; justify-content:center; background:#272e38; color:#ffffff; width:24px; height:24px; border-radius:4px; font-size:0.8rem;">➔</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 7: Graphics Designing -->
+        <div class="solution-dark-card" style="background:#090b0d; border:1px solid #1e242b; border-radius:16px; padding:16px; display:flex; align-items:center; gap:16px; min-height:135px; box-shadow:0 10px 25px rgba(0,0,0,0.4);">
+          <div class="solution-card-img-wrap" style="width:44%; min-width:130px; height:105px; border-radius:12px; overflow:hidden; flex-shrink:0;">
+            <img src="/images/solution_graphics.png" alt="Graphics Designing" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="solution-card-content" style="flex:1; display:flex; flex-direction:column; justify-content:space-between; height:105px;">
+            <h3 class="solution-card-title" style="color:#ffffff; font-size:1.15rem; font-weight:800; margin:0; line-height:1.25; font-family:'Plus Jakarta Sans', sans-serif;">Graphics Designing</h3>
+            <a href="/solutions/graphics-designing.html" class="solution-card-link" style="display:inline-flex; align-items:center; gap:8px; color:#94a3b8; font-size:0.85rem; font-weight:600; text-decoration:none; margin-top:auto;">
+              Explore Solution <span class="solution-card-link-icon" style="display:inline-flex; align-items:center; justify-content:center; background:#272e38; color:#ffffff; width:24px; height:24px; border-radius:4px; font-size:0.8rem;">➔</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 8: E-commerce Development -->
+        <div class="solution-dark-card" style="background:#090b0d; border:1px solid #1e242b; border-radius:16px; padding:16px; display:flex; align-items:center; gap:16px; min-height:135px; box-shadow:0 10px 25px rgba(0,0,0,0.4);">
+          <div class="solution-card-img-wrap" style="width:44%; min-width:130px; height:105px; border-radius:12px; overflow:hidden; flex-shrink:0;">
+            <img src="/images/solution_ecommerce.png" alt="E-commerce Development" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="solution-card-content" style="flex:1; display:flex; flex-direction:column; justify-content:space-between; height:105px;">
+            <h3 class="solution-card-title" style="color:#ffffff; font-size:1.15rem; font-weight:800; margin:0; line-height:1.25; font-family:'Plus Jakarta Sans', sans-serif;">E-commerce Development</h3>
+            <a href="/solutions/ecommerce-development.html" class="solution-card-link" style="display:inline-flex; align-items:center; gap:8px; color:#94a3b8; font-size:0.85rem; font-weight:600; text-decoration:none; margin-top:auto;">
+              Explore Solution <span class="solution-card-link-icon" style="display:inline-flex; align-items:center; justify-content:center; background:#272e38; color:#ffffff; width:24px; height:24px; border-radius:4px; font-size:0.8rem;">➔</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Driven By Smart Solutions (Impact Counter Bar) -->
+  <section class="container" style="margin: 60px auto;">
+    <div style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border-radius: var(--radius-lg); padding: 50px 30px; color: #ffffff;">
+      <div style="text-align:center; margin-bottom:32px;">
+        <h3 style="font-size:1.6rem; font-weight:800; color:#ffffff;">Driven By High Performance & Enterprise Standards</h3>
+      </div>
+      <div class="stats-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:30px; text-align:center;">
+        <div>
+          <div class="stat-number-lg" style="color:#38bdf8; font-size:2.8rem; font-weight:900;">&lt; 100ms</div>
+          <div class="stat-label-lg" style="color:#94a3b8; font-size:0.85rem; font-weight:700; text-transform:uppercase;">API Response Latency</div>
+        </div>
+        <div>
+          <div class="stat-number-lg" style="color:#a78bfa; font-size:2.8rem; font-weight:900;">10+</div>
+          <div class="stat-label-lg" style="color:#94a3b8; font-size:0.85rem; font-weight:700; text-transform:uppercase;">Tech Stacks & Tools</div>
+        </div>
+        <div>
+          <div class="stat-number-lg" style="color:#34d399; font-size:2.8rem; font-weight:900;">99.9%</div>
+          <div class="stat-label-lg" style="color:#94a3b8; font-size:0.85rem; font-weight:700; text-transform:uppercase;">System Uptime SLA</div>
+        </div>
+        <div>
+          <div class="stat-number-lg" style="color:#f43f5e; font-size:2.8rem; font-weight:900;">24/7</div>
+          <div class="stat-label-lg" style="color:#94a3b8; font-size:0.85rem; font-weight:700; text-transform:uppercase;">Dedicated Tech Support</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Grid -->
+  <section class="section" style="background:#ffffff; padding:90px 0;">
+    <div class="container">
+      <div style="text-align:center; max-width:700px; margin:0 auto 40px auto;">
+        <p style="color:#2563eb; font-weight:800; font-size:0.9rem; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:8px;">Why Choose Us</p>
+        <h2 style="font-size:2.2rem; font-weight:900; color:#0f172a;">Fast & Easy <span style="color:#2563eb;">IT Solutions</span></h2>
+      </div>
+
+      <div class="why-us-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:24px;">
+        <div class="profcyma-card" style="padding:28px 24px;">
+          <div>
+            <div style="font-size:2rem; margin-bottom:12px;">🎯</div>
+            <h4 style="font-size:1.1rem; font-weight:800; color:#0f172a; margin-bottom:8px;">Tailored Solutions</h4>
+            <p style="color:#475569; font-size:0.9rem; line-height:1.5;">Customized strategies to meet your unique business goals and market needs.</p>
+          </div>
+        </div>
+
+        <div class="profcyma-card" style="padding:28px 24px;">
+          <div>
+            <div style="font-size:2rem; margin-bottom:12px;">💡</div>
+            <h4 style="font-size:1.1rem; font-weight:800; color:#0f172a; margin-bottom:8px;">Innovative Technology</h4>
+            <p style="color:#475569; font-size:0.9rem; line-height:1.5;">Leveraging the latest Spring Boot 3 frameworks for scalable and secure results.</p>
+          </div>
+        </div>
+
+        <div class="profcyma-card" style="padding:28px 24px;">
+          <div>
+            <div style="font-size:2rem; margin-bottom:12px;">👥</div>
+            <h4 style="font-size:1.1rem; font-weight:800; color:#0f172a; margin-bottom:8px;">Expert Team</h4>
+            <p style="color:#475569; font-size:0.9rem; line-height:1.5;">Skilled full-stack engineers and digital marketers committed to your success.</p>
+          </div>
+        </div>
+
+        <div class="profcyma-card" style="padding:28px 24px;">
+          <div>
+            <div style="font-size:2rem; margin-bottom:12px;">🤝</div>
+            <h4 style="font-size:1.1rem; font-weight:800; color:#0f172a; margin-bottom:8px;">Customer-Centric</h4>
+            <p style="color:#475569; font-size:0.9rem; line-height:1.5;">We prioritize your satisfaction, transparent communication, and 24/7 technical support.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How We Work (4 Simple Steps) -->
+  <section class="section-light-alt">
+    <div class="container">
+      <div style="text-align:center; max-width:700px; margin:0 auto 40px auto;">
+        <p style="color:#2563eb; font-weight:800; font-size:0.9rem; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:8px;">How We Work</p>
+        <h2 style="font-size:2.2rem; font-weight:900; color:#0f172a;">Simple Easy <span style="color:#2563eb;">Steps To Follow</span></h2>
+      </div>
+
+      <div class="steps-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:24px;">
+        <div class="profcyma-card" style="padding:28px 24px; position:relative;">
+          <div>
+            <div style="display:inline-flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:#2563eb; color:#fff; font-weight:800; font-size:0.95rem; margin-bottom:16px;">1</div>
+            <h4 style="font-size:1.15rem; font-weight:800; color:#0f172a; margin-bottom:8px;">Understanding Your Vision</h4>
+            <p style="color:#475569; font-size:0.9rem; line-height:1.6;">We listen to understand your business goals, challenges, and vision to tailor the perfect IT solution.</p>
+          </div>
+        </div>
+
+        <div class="profcyma-card" style="padding:28px 24px; position:relative;">
+          <div>
+            <div style="display:inline-flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:#2563eb; color:#fff; font-weight:800; font-size:0.95rem; margin-bottom:16px;">2</div>
+            <h4 style="font-size:1.15rem; font-weight:800; color:#0f172a; margin-bottom:8px;">Strategic Planning</h4>
+            <p style="color:#475569; font-size:0.9rem; line-height:1.6;">Our experts develop a detailed technical blueprint, database schema, and project milestones.</p>
+          </div>
+        </div>
+
+        <div class="profcyma-card" style="padding:28px 24px; position:relative;">
+          <div>
+            <div style="display:inline-flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:#2563eb; color:#fff; font-weight:800; font-size:0.95rem; margin-bottom:16px;">3</div>
+            <h4 style="font-size:1.15rem; font-weight:800; color:#0f172a; margin-bottom:8px;">Quality Assurance</h4>
+            <p style="color:#475569; font-size:0.9rem; line-height:1.6;">Following agile engineering methodologies, we build clean code, conduct security checks, and test speed.</p>
+          </div>
+        </div>
+
+        <div class="profcyma-card" style="padding:28px 24px; position:relative;">
+          <div>
+            <div style="display:inline-flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:#2563eb; color:#fff; font-weight:800; font-size:0.95rem; margin-bottom:16px;">4</div>
+            <h4 style="font-size:1.15rem; font-weight:800; color:#0f172a; margin-bottom:8px;">Support & Optimization</h4>
+            <p style="color:#475569; font-size:0.9rem; line-height:1.6;">Our partnership continues post-launch with 24/7 server monitoring, performance updates, and ongoing growth support.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Security & Performance Standards -->
+  <section class="section" style="background:#ffffff; padding:70px 0;">
+    <div class="container">
+      <div style="text-align:center; max-width:700px; margin:0 auto 32px auto;">
+        <p style="color:#2563eb; font-weight:800; font-size:0.9rem; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:8px;">Security & Performance</p>
+        <h2 style="font-size:2rem; font-weight:900; color:#0f172a;">Built on Enterprise Standards</h2>
+      </div>
+
+      <div style="display:flex; justify-content:center; align-items:center; gap:24px; flex-wrap:wrap;">
+        <div class="trust-cert-badge">
+          <span style="font-size:1.8rem;">🔒</span>
+          <div>
+            <div>256-Bit SSL Encrypted</div>
+            <div style="font-size:0.8rem; color:#475569; font-weight:400;">Bank-Grade Data & API Security</div>
+          </div>
+        </div>
+
+        <div class="trust-cert-badge">
+          <span style="font-size:1.8rem;">🛡️</span>
+          <div>
+            <div>Razorpay Verified Partner</div>
+            <div style="font-size:0.8rem; color:#475569; font-weight:400;">PCI-DSS Compliant Payments</div>
+          </div>
+        </div>
+
+        <div class="trust-cert-badge">
+          <span style="font-size:1.8rem;">⚡</span>
+          <div>
+            <div>Core Web Vitals Optimized</div>
+            <div style="font-size:0.8rem; color:#475569; font-weight:400;">Ultra-Fast Performance & SEO Ready</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Want To Discuss Project Banner -->
+  <section class="container" style="margin: 60px auto;">
+    <div style="background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); border-radius: var(--radius-lg); padding: 60px 40px; text-align: center; color: #ffffff;">
+      <h2 style="font-size: 2.2rem; font-weight: 900; margin-bottom: 12px;">Want To Discuss About A <span style="color:#cbd5e1;">New Project?</span></h2>
+      <p style="color: #e2e8f0; max-width: 600px; margin: 0 auto 28px auto; font-size: 1.05rem;">Let’s bring your ideas to life! Get in touch with us for custom IT solutions and expert guidance to kickstart your project.</p>
+      <a href="/contact.html" class="btn btn-outline" style="background:#ffffff; color:#2563eb; border:none; padding:14px 36px; font-weight:800; font-size:1rem; border-radius:var(--radius-full);">Contact Us</a>
+    </div>
+  </section>
+
+  <!-- Dedicated Free Website Audit Section -->
+  <section id="audit-section" class="container" style="margin: 80px auto;">
+    <div style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border: 1px solid #334155; border-radius: var(--radius-lg); padding: 50px 40px; color: #ffffff; box-shadow: 0 20px 40px rgba(0,0,0,0.25);">
+      <div style="max-width: 760px; margin: 0 auto; text-align: center;">
+        <span style="background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.3); color: #38bdf8; font-size: 0.85rem; font-weight: 700; padding: 6px 18px; border-radius: 30px; text-transform: uppercase; letter-spacing: 0.05em; display: inline-block; margin-bottom: 12px;">Instant Performance & SEO Analysis</span>
+        <h2 style="font-size: 2.3rem; font-weight: 800; margin-bottom: 12px;">Get a <span style="color:#38bdf8;">Free Web Audit</span> & Growth Report</h2>
+        <p style="color: #cbd5e1; font-size: 1.05rem; margin-bottom: 30px;">Submit your website details to receive a detailed speed, security, and SEO audit report from our senior engineering team within 24 hours.</p>
+        
+        <form id="auditForm" style="display: flex; flex-direction: column; gap: 18px; text-align: left;">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+            <div>
+              <label style="display: block; font-size: 0.88rem; font-weight: 700; color: #e2e8f0; margin-bottom: 6px;">Full Name *</label>
+              <input type="text" id="auditFullName" placeholder="e.g. Rahul Kumar" required style="width: 100%; padding: 12px 16px; background: #0f172a; border: 1px solid #334155; border-radius: 8px; color: #ffffff; font-size: 0.95rem; outline: none;">
+            </div>
+            <div>
+              <label style="display: block; font-size: 0.88rem; font-weight: 700; color: #e2e8f0; margin-bottom: 6px;">Email Address *</label>
+              <input type="email" id="auditEmail" placeholder="e.g. rahul@example.com" required style="width: 100%; padding: 12px 16px; background: #0f172a; border: 1px solid #334155; border-radius: 8px; color: #ffffff; font-size: 0.95rem; outline: none;">
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+            <div>
+              <label style="display: block; font-size: 0.88rem; font-weight: 700; color: #e2e8f0; margin-bottom: 6px;">Phone / WhatsApp Number</label>
+              <input type="text" id="auditPhone" placeholder="+91 9876543210" style="width: 100%; padding: 12px 16px; background: #0f172a; border: 1px solid #334155; border-radius: 8px; color: #ffffff; font-size: 0.95rem; outline: none;">
+            </div>
+            <div>
+              <label style="display: block; font-size: 0.88rem; font-weight: 700; color: #e2e8f0; margin-bottom: 6px;">Website URL / Web App Link</label>
+              <input type="url" id="auditWebsite" placeholder="https://yourwebsite.com" style="width: 100%; padding: 12px 16px; background: #0f172a; border: 1px solid #334155; border-radius: 8px; color: #ffffff; font-size: 0.95rem; outline: none;">
+            </div>
+          </div>
+
+          <div>
+            <label style="display: block; font-size: 0.88rem; font-weight: 700; color: #e2e8f0; margin-bottom: 6px;">Primary Goal / Service Needed</label>
+            <select id="auditService" style="width: 100%; padding: 12px 16px; background: #0f172a; border: 1px solid #334155; border-radius: 8px; color: #ffffff; font-size: 0.95rem; outline: none;">
+              <option value="Free Website Speed & Security Audit">Free Website Speed & Security Audit</option>
+              <option value="Custom Web Development">Custom Web Development</option>
+              <option value="Mobile App Development">Mobile App Development</option>
+              <option value="SEO & Lead Generation">SEO & Lead Generation</option>
+              <option value="ERP & Custom Software">ERP & Custom Software</option>
+            </select>
+          </div>
+
+          <div>
+            <label style="display: block; font-size: 0.88rem; font-weight: 700; color: #e2e8f0; margin-bottom: 6px;">Project Requirements / Notes</label>
+            <textarea id="auditNotes" rows="3" placeholder="Describe your project, timeline, or current issues..." style="width: 100%; padding: 12px 16px; background: #0f172a; border: 1px solid #334155; border-radius: 8px; color: #ffffff; font-size: 0.95rem; outline: none; font-family: inherit; resize: vertical;"></textarea>
+          </div>
+
+          <div id="auditToast" style="display:none; padding:12px; border-radius:6px; font-size:0.9rem; font-weight:600;"></div>
+
+          <button type="submit" class="btn btn-primary" style="background: #2563eb; color: #ffffff; padding: 14px 32px; font-weight: 800; font-size: 1rem; border-radius: 8px; border: none; cursor: pointer; transition: var(--transition);">Submit Request for Free Audit</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Exact Dark Profcyma Column Box FAQ Accordion Section -->
+  <section class="profcyma-faq-section" style="background:#1a1a1a; padding:80px 0; color:#ffffff;">
+    <div class="container">
+      <h2 class="profcyma-faq-title" style="text-align:center; font-size:1.6rem; font-weight:600; color:#a3a3a3; letter-spacing:0.25em; text-transform:uppercase; margin-bottom:40px;">Frequently Asked Questions</h2>
+
+      <div class="profcyma-faq-container" style="max-width:980px; margin:0 auto; display:flex; flex-direction:column; gap:8px; padding:12px; background:#0a0a0a; border-radius:4px; border:2px solid #2e2e2e; box-shadow:0 20px 50px rgba(0,0,0,0.6);">
+        <!-- Q1 -->
+        <div class="profcyma-faq-item" style="background:#000000; border:1px solid #262626; border-radius:2px; overflow:hidden;">
+          <div class="profcyma-faq-question" style="padding:16px 20px; font-size:0.95rem; font-weight:700; color:#ffffff; display:flex; align-items:center; justify-content:space-between; cursor:pointer; user-select:none; background:#000000;">
+            <span>What IT services can help my business grow?</span>
+            <span class="profcyma-faq-icon" style="font-size:0.85rem; color:#ffffff; transition:transform 0.3s ease; display:inline-block; margin-left:16px;">∨</span>
+          </div>
+          <div class="profcyma-faq-answer" style="display:none; padding:0 20px 18px 20px; color:#d4d4d4; font-size:0.92rem; line-height:1.65; background:#000000; border-top:1px solid #1a1a1a; margin-top:2px; padding-top:14px;">
+            We provide end-to-end IT services including custom web development, mobile app development (iOS & Android), Java Spring Boot REST API engineering, e-commerce solutions, SEO, and digital marketing to scale your brand.
+          </div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="profcyma-faq-item" style="background:#000000; border:1px solid #262626; border-radius:2px; overflow:hidden;">
+          <div class="profcyma-faq-question" style="padding:16px 20px; font-size:0.95rem; font-weight:700; color:#ffffff; display:flex; align-items:center; justify-content:space-between; cursor:pointer; user-select:none; background:#000000;">
+            <span>Why does every business need a professional website?</span>
+            <span class="profcyma-faq-icon" style="font-size:0.85rem; color:#ffffff; transition:transform 0.3s ease; display:inline-block; margin-left:16px;">∨</span>
+          </div>
+          <div class="profcyma-faq-answer" style="display:none; padding:0 20px 18px 20px; color:#d4d4d4; font-size:0.92rem; line-height:1.65; background:#000000; border-top:1px solid #1a1a1a; margin-top:2px; padding-top:14px;">
+            A professional website acts as your 24/7 digital storefront, building instant credibility, showcasing your services, capturing qualified leads, and converting visitors into paying customers.
+          </div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="profcyma-faq-item" style="background:#000000; border:1px solid #262626; border-radius:2px; overflow:hidden;">
+          <div class="profcyma-faq-question" style="padding:16px 20px; font-size:0.95rem; font-weight:700; color:#ffffff; display:flex; align-items:center; justify-content:space-between; cursor:pointer; user-select:none; background:#000000;">
+            <span>How can custom software improve business efficiency?</span>
+            <span class="profcyma-faq-icon" style="font-size:0.85rem; color:#ffffff; transition:transform 0.3s ease; display:inline-block; margin-left:16px;">∨</span>
+          </div>
+          <div class="profcyma-faq-answer" style="display:none; padding:0 20px 18px 20px; color:#d4d4d4; font-size:0.92rem; line-height:1.65; background:#000000; border-top:1px solid #1a1a1a; margin-top:2px; padding-top:14px;">
+            Custom software automates manual workflows, integrates central management systems, streamlines billing and attendance tracking, and eliminates human errors to boost productivity.
+          </div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="profcyma-faq-item" style="background:#000000; border:1px solid #262626; border-radius:2px; overflow:hidden;">
+          <div class="profcyma-faq-question" style="padding:16px 20px; font-size:0.95rem; font-weight:700; color:#ffffff; display:flex; align-items:center; justify-content:space-between; cursor:pointer; user-select:none; background:#000000;">
+            <span>What are the benefits of mobile app development for businesses?</span>
+            <span class="profcyma-faq-icon" style="font-size:0.85rem; color:#ffffff; transition:transform 0.3s ease; display:inline-block; margin-left:16px;">∨</span>
+          </div>
+          <div class="profcyma-faq-answer" style="display:none; padding:0 20px 18px 20px; color:#d4d4d4; font-size:0.92rem; line-height:1.65; background:#000000; border-top:1px solid #1a1a1a; margin-top:2px; padding-top:14px;">
+            Mobile apps provide direct access to your customers through push notifications, offline functionality, seamless payments, and enhanced brand engagement on iOS & Android devices.
+          </div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="profcyma-faq-item" style="background:#000000; border:1px solid #262626; border-radius:2px; overflow:hidden;">
+          <div class="profcyma-faq-question" style="padding:16px 20px; font-size:0.95rem; font-weight:700; color:#ffffff; display:flex; align-items:center; justify-content:space-between; cursor:pointer; user-select:none; background:#000000;">
+            <span>How can digital marketing help my business grow?</span>
+            <span class="profcyma-faq-icon" style="font-size:0.85rem; color:#ffffff; transition:transform 0.3s ease; display:inline-block; margin-left:16px;">∨</span>
+          </div>
+          <div class="profcyma-faq-answer" style="display:none; padding:0 20px 18px 20px; color:#d4d4d4; font-size:0.92rem; line-height:1.65; background:#000000; border-top:1px solid #1a1a1a; margin-top:2px; padding-top:14px;">
+            Digital marketing (SEO, Google Ads, Meta PPC, social media management) drives targeted traffic, improves brand visibility, and generates a steady stream of qualified inbound leads.
+          </div>
+        </div>
+
+        <!-- Q6 -->
+        <div class="profcyma-faq-item" style="background:#000000; border:1px solid #262626; border-radius:2px; overflow:hidden;">
+          <div class="profcyma-faq-question" style="padding:16px 20px; font-size:0.95rem; font-weight:700; color:#ffffff; display:flex; align-items:center; justify-content:space-between; cursor:pointer; user-select:none; background:#000000;">
+            <span>Which industries can benefit from IT solutions?</span>
+            <span class="profcyma-faq-icon" style="font-size:0.85rem; color:#ffffff; transition:transform 0.3s ease; display:inline-block; margin-left:16px;">∨</span>
+          </div>
+          <div class="profcyma-faq-answer" style="display:none; padding:0 20px 18px 20px; color:#d4d4d4; font-size:0.92rem; line-height:1.65; background:#000000; border-top:1px solid #1a1a1a; margin-top:2px; padding-top:14px;">
+            Virtually all industries—including E-Commerce, Healthcare, Education, Real Estate, Finance, Logistics, and Professional Services—benefit from custom digital transformation.
+          </div>
+        </div>
+
+        <!-- Q7 -->
+        <div class="profcyma-faq-item" style="background:#000000; border:1px solid #262626; border-radius:2px; overflow:hidden;">
+          <div class="profcyma-faq-question" style="padding:16px 20px; font-size:0.95rem; font-weight:700; color:#ffffff; display:flex; align-items:center; justify-content:space-between; cursor:pointer; user-select:none; background:#000000;">
+            <span>Why is ongoing website and software maintenance important?</span>
+            <span class="profcyma-faq-icon" style="font-size:0.85rem; color:#ffffff; transition:transform 0.3s ease; display:inline-block; margin-left:16px;">∨</span>
+          </div>
+          <div class="profcyma-faq-answer" style="display:none; padding:0 20px 18px 20px; color:#d4d4d4; font-size:0.92rem; line-height:1.65; background:#000000; border-top:1px solid #1a1a1a; margin-top:2px; padding-top:14px;">
+            Regular maintenance ensures high system uptime, sub-second load speeds, protection against security vulnerabilities, database backups, and compatibility with modern browser updates.
+          </div>
+        </div>
+
+        <!-- Q8 -->
+        <div class="profcyma-faq-item" style="background:#000000; border:1px solid #262626; border-radius:2px; overflow:hidden;">
+          <div class="profcyma-faq-question" style="padding:16px 20px; font-size:0.95rem; font-weight:700; color:#ffffff; display:flex; align-items:center; justify-content:space-between; cursor:pointer; user-select:none; background:#000000;">
+            <span>How do I choose the right IT company for my business?</span>
+            <span class="profcyma-faq-icon" style="font-size:0.85rem; color:#ffffff; transition:transform 0.3s ease; display:inline-block; margin-left:16px;">∨</span>
+          </div>
+          <div class="profcyma-faq-answer" style="display:none; padding:0 20px 18px 20px; color:#d4d4d4; font-size:0.92rem; line-height:1.65; background:#000000; border-top:1px solid #1a1a1a; margin-top:2px; padding-top:14px;">
+            Look for an agency with strong technical expertise (Java Spring Boot, modern web frameworks), transparent communication, fast audit turnarounds, custom scalable solutions, and 24/7 client support.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="section-light-alt">
+    <div class="container">
+      <div style="text-align:center; max-width:700px; margin:0 auto 40px auto;">
+        <p style="color:#2563eb; font-weight:800; font-size:0.9rem; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:8px;">Client Reviews</p>
+        <h2 style="font-size:2.2rem; font-weight:900; color:#0f172a;">What Our Clients <span style="color:#2563eb;">Say About Us</span></h2>
+      </div>
+
+      <div class="testimonial-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:28px;">
+        <div class="profcyma-card">
+          <div>
+            <div class="rating-stars" style="color:#f59e0b; margin-bottom:12px;">★★★★★</div>
+            <p style="color:#475569; font-size:0.95rem; line-height:1.7; margin-bottom:20px;">
+              "Techzyncmedia transformed our business processes with their innovative Spring Boot solutions. Their team was professional, responsive, and exceeded expectations!"
+            </p>
+          </div>
+          <div class="author-box" style="display:flex; align-items:center; gap:12px;">
+            <div class="avatar-circle" style="background:#2563eb; color:#fff; width:42px; height:42px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:800;">RK</div>
+            <div>
+              <div class="author-name" style="color:#0f172a; font-weight:800;">Rahul K.</div>
+              <div class="author-title" style="color:#475569; font-size:0.85rem;">Software Developer</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="profcyma-card">
+          <div>
+            <div class="rating-stars" style="color:#f59e0b; margin-bottom:12px;">★★★★★</div>
+            <p style="color:#475569; font-size:0.95rem; line-height:1.7; margin-bottom:20px;">
+              "Working with Techzyncmedia has been a game-changer. Their social media handling and custom web solution brought continuous inbound leads."
+            </p>
+          </div>
+          <div class="author-box" style="display:flex; align-items:center; gap:12px;">
+            <div class="avatar-circle" style="background:#0284c7; color:#fff; width:42px; height:42px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:800;">AM</div>
+            <div>
+              <div class="author-name" style="color:#0f172a; font-weight:800;">Ananya M.</div>
+              <div class="author-title" style="color:#475569; font-size:0.85rem;">Marketing Director</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="profcyma-card">
+          <div>
+            <div class="rating-stars" style="color:#f59e0b; margin-bottom:12px;">★★★★★</div>
+            <p style="color:#475569; font-size:0.95rem; line-height:1.7; margin-bottom:20px;">
+              "The team developed our website with great attention to detail. Their communication was excellent, and the final result perfectly matched our vision."
+            </p>
+          </div>
+          <div class="author-box" style="display:flex; align-items:center; gap:12px;">
+            <div class="avatar-circle" style="background:#059669; color:#fff; width:42px; height:42px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:800;">VS</div>
+            <div>
+              <div class="author-name" style="color:#0f172a; font-weight:800;">Vikram S.</div>
+              <div class="author-title" style="color:#475569; font-size:0.85rem;">CTO, Nexa Solutions</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer with Official Logo Image -->
+  <footer class="footer" style="background:#0f172a; color:#ffffff; border-top:none; padding:70px 0 30px 0;">
+    <div class="container">
+      <div class="footer-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:40px;">
+        <div>
+          <a href="/" class="logo" style="display:flex; align-items:center; gap:12px; margin-bottom: 16px;">
+            <img src="/images/logo.png" alt="Techzyncmedia Logo" style="height:44px; width:auto; object-fit:contain;">
+            <span style="color:#ffffff; font-weight:800; font-size:1.3rem;">Techzync<span style="color:#38bdf8;">media</span></span>
+          </a>
+          <p style="color: #94a3b8; font-size: 0.9rem; margin-top: 12px; line-height:1.6;">
+            High-performance web architecture, Spring Boot API engineering, SEO, and digital growth systems.
+          </p>
+        </div>
+
+        <div>
+          <h4 style="font-size: 0.95rem; font-weight: 700; margin-bottom: 16px; color:#ffffff;">Quick Links</h4>
+          <ul style="display: flex; flex-direction: column; gap: 10px; font-size: 0.88rem; color: #94a3b8;">
+            <li><a href="/index.html" style="color:#94a3b8;">Home</a></li>
+            <li><a href="/who-we-are.html" style="color:#94a3b8;">Who We Are</a></li>
+            <li><a href="/it-solutions.html" style="color:#94a3b8;">IT Solutions</a></li>
+            <li><a href="/technologies.html" style="color:#94a3b8;">Technologies</a></li>
+            <li><a href="/blogs.html" style="color:#94a3b8;">Blogs</a></li>
+            <li><a href="/career.html" style="color:#94a3b8;">Career</a></li>
+            <li><a href="/contact.html" style="color:#94a3b8;">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="font-size: 0.95rem; font-weight: 700; margin-bottom: 16px; color:#ffffff;">Legal & Policies</h4>
+          <ul style="display: flex; flex-direction: column; gap: 10px; font-size: 0.88rem; color: #94a3b8;">
+            <li><a href="/privacy-policy.html" style="color:#94a3b8;">Privacy Policy</a></li>
+            <li><a href="/terms-conditions.html" style="color:#94a3b8;">Terms & Conditions</a></li>
+            <li><a href="/refund-cancellation-policy.html" style="color:#94a3b8;">Refund & Cancellation</a></li>
+            <li><a href="/service-delivery-policy.html" style="color:#94a3b8;">Service Delivery Policy</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="font-size: 0.95rem; font-weight: 700; margin-bottom: 16px; color:#ffffff;">Support & Business</h4>
+          <p style="font-size: 0.88rem; color: #94a3b8;">Email: <a href="mailto:contact@techzyncmedia.com" style="color:#38bdf8;">contact@techzyncmedia.com</a></p>
+          <p style="font-size: 0.88rem; color: #94a3b8; margin-top: 6px;">Phone: +91 9372266379</p>
+          <p style="font-size: 0.88rem; color: #94a3b8; margin-top: 6px;">Location: Online Agency - Pune, Maharashtra</p>
+          <p style="font-size: 0.88rem; color: #94a3b8; margin-top: 6px;"><a href="/admin.html" style="color: #38bdf8;">Admin Portal</a></p>
+        </div>
+      </div>
+
+      <div class="footer-bottom" style="border-top:1px solid #1e293b; color:#94a3b8; margin-top:50px; padding-top:20px; display:flex; justify-content:space-between; flex-wrap:wrap; font-size:0.85rem;">
+        <span>&copy; 2026 Techzyncmedia. All rights reserved.</span>
+        <span>Secured with SSL & Razorpay PCI-DSS Compliance</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Email CTA Widget -->
+  <a href="mailto:contact@techzyncmedia.com" class="email-float" aria-label="Email Us">
+    <div class="email-pulse"></div>
+    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+    </svg>
+    Email Us (contact@techzyncmedia.com)
+  </a>
+
+  <script src="/js/app.js"></script>
+  <script src="/js/chatbot.js" defer></script>
+</body>
+</html>

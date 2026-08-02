@@ -43,9 +43,12 @@
   padding: 0;
 }
 
-html {
+html, body {
   scroll-behavior: smooth;
   font-size: 16px;
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
 }
 
 body {
@@ -582,8 +585,52 @@ select.form-control {
 }
 
 @media (max-width: 992px) {
+  .nav-container {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    gap: 8px !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .logo {
+    gap: 8px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .logo span {
+    font-size: 1.05rem !important;
+    white-space: nowrap !important;
+  }
+
+  .logo img {
+    height: 32px !important;
+    width: auto !important;
+  }
+
   .mobile-menu-toggle {
-    display: flex;
+    display: flex !important;
+    margin-left: auto !important;
+    margin-right: 8px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .nav-actions {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    flex-shrink: 0 !important;
+  }
+
+  .nav-actions .btn {
+    padding: 8px 14px !important;
+    font-size: 0.8rem !important;
+    white-space: nowrap !important;
+  }
+
+  .vertical-inquire-tab {
+    display: none !important;
   }
 
   .nav-links {
@@ -617,11 +664,6 @@ select.form-control {
     width: 100%;
     padding: 10px 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  }
-
-  .nav-actions {
-    margin-left: auto;
-    margin-right: 12px;
   }
 }
 

@@ -584,86 +584,142 @@ select.form-control {
   transform: translateY(-9px) rotate(-45deg);
 }
 
-@media (max-width: 992px) {
+/* Profcyma Exact Mobile Layout Override (max-width: 768px) */
+@media (max-width: 768px) {
+  /* 1. Header Layout on Mobile */
+  .header {
+    background: #ffffff !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+    padding: 12px 16px !important;
+  }
+
   .nav-container {
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
     width: 100% !important;
-    gap: 8px !important;
-    padding-left: 16px !important;
-    padding-right: 16px !important;
+    padding: 0 !important;
   }
 
   .logo {
     gap: 8px !important;
-    flex-shrink: 0 !important;
   }
 
   .logo span {
-    font-size: 1.05rem !important;
-    white-space: nowrap !important;
+    color: #0f172a !important;
+    font-size: 1.15rem !important;
+    font-weight: 800 !important;
+  }
+
+  .logo span span {
+    color: #0284c7 !important;
   }
 
   .logo img {
-    height: 32px !important;
+    height: 36px !important;
     width: auto !important;
   }
 
+  /* Hamburger Menu Button on Far Right */
   .mobile-menu-toggle {
     display: flex !important;
     margin-left: auto !important;
-    margin-right: 8px !important;
-    flex-shrink: 0 !important;
-  }
-
-  .nav-actions {
-    margin-left: 0 !important;
     margin-right: 0 !important;
-    flex-shrink: 0 !important;
   }
 
-  .nav-actions .btn {
-    padding: 8px 14px !important;
-    font-size: 0.8rem !important;
-    white-space: nowrap !important;
+  .mobile-menu-toggle span {
+    background-color: #0f172a !important;
   }
 
-  .vertical-inquire-tab {
+  /* Hide Contact Us button in header bar on mobile to match Profcyma clean header */
+  .nav-actions {
     display: none !important;
   }
 
+  /* Mobile Slide-out Drawer */
   .nav-links {
-    position: fixed;
-    top: 76px;
-    left: 0;
-    width: 100%;
-    height: calc(100vh - 76px);
-    background: rgba(15, 23, 42, 0.98);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 32px 24px;
-    gap: 20px;
-    transform: translateX(-100%);
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 999;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
-    overflow-y: auto;
-  }
-
-  .nav-links.mobile-active {
-    display: flex !important;
-    transform: translateX(0);
+    top: 61px !important;
+    height: calc(100vh - 61px) !important;
+    background: #ffffff !important;
+    border-top: 1px solid #e2e8f0 !important;
   }
 
   .nav-links .nav-link {
-    font-size: 1.15rem;
-    width: 100%;
-    padding: 10px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    color: #0f172a !important;
+    border-bottom: 1px solid #f1f5f9 !important;
+  }
+
+  .nav-links .nav-link.active, .nav-links .nav-link:hover {
+    color: #2563eb !important;
+  }
+
+  /* 2. Hero Section on Mobile (Image TOP, Content BOTTOM) */
+  #heroSection {
+    padding-top: 0 !important;
+    background: #ffffff !important;
+  }
+
+  #heroSection > div {
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: auto !important;
+    width: 100% !important;
+  }
+
+  /* Right Side Image Container -> Show on TOP */
+  #heroSection > div > div:nth-child(3) {
+    order: 1 !important;
+    width: 100% !important;
+    min-width: 100% !important;
+    padding: 0 !important;
+    background: #000000 !important;
+  }
+
+  #heroSection > div > div:nth-child(3) > div {
+    height: 250px !important;
+    border-radius: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Left Content Card Container -> Show on BOTTOM */
+  #heroCardContainer {
+    order: 2 !important;
+    width: 100% !important;
+    min-width: 100% !important;
+    padding: 24px 20px !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background: #ffffff !important;
+  }
+
+  .hero-slide-item h1 {
+    font-size: 1.7rem !important;
+    margin-bottom: 12px !important;
+  }
+
+  .hero-slide-item p {
+    font-size: 0.95rem !important;
+  }
+
+  /* 3. Orange Vertical "Inquire Now" Tab */
+  .vertical-inquire-tab {
+    display: block !important;
+    position: fixed !important;
+    right: 0 !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    background: #e67e22 !important;
+    color: #ffffff !important;
+    padding: 14px 10px !important;
+    writing-mode: vertical-rl !important;
+    text-orientation: mixed !important;
+    font-weight: 700 !important;
+    font-size: 0.85rem !important;
+    border-radius: 6px 0 0 6px !important;
+    z-index: 9999 !important;
+    text-decoration: none !important;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2) !important;
   }
 }
 

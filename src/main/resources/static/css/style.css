@@ -781,18 +781,26 @@ select.form-control {
 
   .hero-slide-item h1 {
     order: 1 !important;
-    font-size: 1.55rem !important;
+    font-size: 1.65rem !important;
     font-weight: 800 !important;
     line-height: 1.25 !important;
-    margin-bottom: 8px !important;
-    color: #0f172a !important;
+    margin-bottom: 6px !important;
+    color: #000000 !important;
+  }
+
+  .hero-slide-item div[style*="background:#0052cc"] {
+    order: 2 !important;
+    margin: 4px 0 14px 0 !important;
+    width: 140px !important;
+    height: 4px !important;
   }
 
   .hero-slide-item p {
-    order: 2 !important;
-    font-size: 0.92rem !important;
+    order: 3 !important;
+    font-size: 1.02rem !important;
+    font-weight: 600 !important;
     line-height: 1.5 !important;
-    color: #475569 !important;
+    color: #0f172a !important;
   }
 
   /* 3. Hide Orange Vertical "Inquire Now" Tab completely on mobile */

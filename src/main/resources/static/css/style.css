@@ -677,9 +677,11 @@ select.form-control {
   }
 
   /* 2. Hero Section on Mobile (Image TOP, Content BOTTOM) */
+  /* 2. Hero Section on Mobile (Image TOP Full Edge-to-Edge, Content BOTTOM) */
   #heroSection {
     padding-top: 0 !important;
     background: #ffffff !important;
+    overflow: hidden !important;
   }
 
   #heroSection > div {
@@ -687,31 +689,38 @@ select.form-control {
     flex-direction: column !important;
     min-height: auto !important;
     width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
   }
 
-  /* Right Side Image Container -> Show on TOP - Compact & Clean */
+  /* Right Side Image Container -> TOP Edge-to-Edge 100% Full Width */
   #heroSection > div > div:nth-child(3) {
     order: 1 !important;
     width: 100% !important;
     min-width: 100% !important;
-    padding: 12px 16px 0 16px !important;
-    background: #ffffff !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
   }
 
   #heroSection > div > div:nth-child(3) > div {
-    height: 180px !important;
-    max-height: 180px !important;
-    border-radius: 14px !important;
-    border: 1px solid #e2e8f0 !important;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08) !important;
-    overflow: hidden !important;
-    background: #f8fafc !important;
+    width: 100% !important;
+    height: 220px !important;
+    max-height: 220px !important;
+    border-radius: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
   #heroSlideImage {
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
+    border-radius: 0 !important;
   }
 
   /* Left Content Card Container -> Show on BOTTOM */

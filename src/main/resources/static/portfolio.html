@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio & Case Studies | Techzyncmedia Enterprise Software & Web Apps</title>
+  <meta name="description" content="Explore Techzyncmedia's portfolio of custom mobile apps, web applications, Java Spring Boot microservices, cloud SaaS platforms, and digital solutions.">
+  <meta name="keywords" content="Techzyncmedia portfolio, software case studies, Spring Boot projects, web development showcase, mobile app case study, enterprise IT solutions portfolio">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://techzyncmedia.com/portfolio.html">
+
+  <!-- Favicon Links -->
+  <link rel="icon" type="image/png" href="/images/logo.png">
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/images/logo.png">
+
+  <!-- FontAwesome & Google Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Social Media & Open Graph Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Techzyncmedia">
+  <meta property="og:title" content="Portfolio & Case Studies | Techzyncmedia Software Engineering">
+  <meta property="og:description" content="Discover how Techzyncmedia builds scalable Spring Boot microservices, high-performance web apps, and cross-platform mobile apps for enterprise clients.">
+  <meta property="og:image" content="https://techzyncmedia.com/images/logo.png">
+  <meta property="og:url" content="https://techzyncmedia.com/portfolio.html">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Techzyncmedia Portfolio & Case Studies",
+    "url": "https://techzyncmedia.com/portfolio.html",
+    "description": "Showcase of enterprise software development, Spring Boot backend engineering, web applications, and mobile solutions developed by Techzyncmedia.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Techzyncmedia",
+      "logo": "https://techzyncmedia.com/images/logo.png"
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="/css/style.css?v=12">
+  <style>
+    :root {
+      --bg-dark: #0f172a;
+      --bg-card: #1e293b;
+      --border-color: #334155;
+      --accent-blue: #38bdf8;
+      --accent-primary: #2563eb;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+
+    body {
+      background-color: #0b0f19;
+      color: var(--text-main);
+      font-family: 'Inter', sans-serif;
+    }
+
+    .portfolio-hero {
+      background: linear-gradient(180deg, #0f172a 0%, #0b0f19 100%);
+      padding: 80px 0 60px 0;
+      text-align: center;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .portfolio-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      color: var(--accent-blue);
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 6px 18px;
+      border-radius: 30px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .portfolio-hero-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 3rem;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .portfolio-hero-subtitle {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 750px;
+      margin: 0 auto 40px auto;
+      line-height: 1.6;
+    }
+
+    .portfolio-stats-bar {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 24px;
+      background: rgba(30, 41, 59, 0.6);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      backdrop-filter: blur(10px);
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+    .stat-item .num {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--accent-blue);
+    }
+    .stat-item .label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* Filter Controls */
+    .filter-section {
+      padding: 40px 0 20px 0;
+    }
+    .filter-container {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .portfolio-filter-btn {
+      background: #1e293b;
+      color: var(--text-muted);
+      border: 1px solid var(--border-color);
+      padding: 10px 24px;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .portfolio-filter-btn:hover, .portfolio-filter-btn.active {
+      background: var(--accent-primary);
+      color: #ffffff;
+      border-color: var(--accent-primary);
+      box-shadow: 0 4px 20px rgba(37, 99, 235, 0.4);
+    }
+
+    /* Portfolio Cards Grid */
+    .portfolio-grid-section {
+      padding: 40px 0 90px 0;
+    }
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 30px;
+    }
+
+    .portfolio-card {
+      background: #111827;
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+    .portfolio-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--accent-blue);
+      box-shadow: 0 20px 40px rgba(56, 189, 248, 0.15);
+    }
+
+    .card-preview-header {
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      padding: 24px;
+      position: relative;
+      border-bottom: 1px solid var(--border-color);
+      min-height: 180px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .card-category-badge {
+      display: inline-block;
+      background: rgba(37, 99, 235, 0.2);
+      color: #60a5fa;
+      border: 1px solid rgba(96, 165, 250, 0.3);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .card-preview-icon {
+      font-size: 2.5rem;
+      color: var(--accent-blue);
+      align-self: flex-end;
+    }
+
+    .card-body {
+      padding: 24px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+    .card-client-tag {
+      font-size: 0.82rem;
+      color: var(--accent-blue);
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .card-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .tech-stack-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 20px;
+    }
+    .tech-badge {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #cbd5e1;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+
+    .card-metrics-preview {
+      display: flex;
+      justify-content: space-between;
+      background: rgba(30, 41, 59, 0.5);
+      padding: 12px 16px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .metric-sub-val {
+      font-weight: 800;
+      color: #38bdf8;
+      font-size: 0.95rem;
+    }
+    .metric-sub-lbl {
+      font-size: 0.75rem;
+      color: #94a3b8;
+    }
+
+    .card-action-btn {
+      width: 100%;
+      background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+      color: #ffffff;
+      border: none;
+      padding: 12px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+    .card-action-btn:hover {
+      background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+      transform: translateY(-2px);
+    }
+
+    /* Case Study Modal */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(8px);
+      z-index: 9999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal-content {
+      background: #111827;
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      width: 100%;
+      max-width: 800px;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 36px;
+      position: relative;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+      color: #f8fafc;
+    }
+
+    .modal-close-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #1e293b;
+      border: 1px solid var(--border-color);
+      color: #94a3b8;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+    }
+    .modal-close-btn:hover {
+      color: #ffffff;
+      background: #ef4444;
+      border-color: #ef4444;
+    }
+
+    .modal-header-tag {
+      color: var(--accent-blue);
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 6px;
+    }
+    .modal-header-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+    .modal-header-sub {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 24px;
+    }
+
+    .modal-metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 30px;
+    }
+    @media(max-width: 600px) {
+      .modal-metrics-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    .modal-metric-card {
+      background: rgba(30, 41, 59, 0.6);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 14px;
+      text-align: center;
+    }
+    .modal-metric-card .metric-value {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--accent-blue);
+    }
+    .modal-metric-card .metric-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .modal-section-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 24px 0 10px 0;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 6px;
+    }
+
+    .modal-features-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .modal-features-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.92rem;
+      color: #cbd5e1;
+    }
+
+    .cta-banner {
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      border: 1px solid var(--accent-primary);
+      border-radius: 20px;
+      padding: 50px 30px;
+      text-align: center;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation Bar Header -->
+  <header class="header" style="background:#0f172a; border-bottom:1px solid #1e293b; padding:16px 0;">
+    <div class="container nav-container">
+      <a href="/" class="logo" style="display:flex; align-items:center; gap:12px;">
+        <img src="/images/logo.png" alt="Techzyncmedia Logo" style="height:46px; width:auto; object-fit:contain;">
+        <span style="color:#ffffff; font-weight:800; font-size:1.3rem;">Techzync<span style="color:#38bdf8;">media</span></span>
+      </a>
+      <nav class="nav-links">
+        <a href="/index.html" class="nav-link">Home</a>
+        <a href="/who-we-are.html" class="nav-link">Who We Are</a>
+        <a href="/it-solutions.html" class="nav-link">IT Solutions</a>
+        <a href="/technologies.html" class="nav-link">Technologies</a>
+        <a href="/portfolio.html" class="nav-link active" style="color:#38bdf8;">Portfolio</a>
+        <a href="/blogs.html" class="nav-link">Blogs</a>
+        <a href="/career.html" class="nav-link">Career</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="/contact.html" class="btn btn-primary btn-sm" style="background:#000000; color:#ffffff; border-radius:4px; padding:10px 24px; font-weight:700;">Contact Us</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="portfolio-hero">
+    <div class="container">
+      <div class="portfolio-hero-badge">
+        <i class="fas fa-layer-group"></i> Proof of Work & Software Engineering Excellence
+      </div>
+      <h1 class="portfolio-hero-title">Our Portfolio & Case Studies</h1>
+      <p class="portfolio-hero-subtitle">
+        Explore how Techzyncmedia engineers scalable enterprise web applications, high-concurrency Spring Boot APIs, multi-tenant cloud platforms, and intuitive mobile solutions for clients worldwide.
+      </p>
+
+      <div class="portfolio-stats-bar">
+        <div class="stat-item">
+          <div class="num">50+</div>
+          <div class="label">Projects Delivered</div>
+        </div>
+        <div class="stat-item">
+          <div class="num">99.99%</div>
+          <div class="label">System Uptime SLA</div>
+        </div>
+        <div class="stat-item">
+          <div class="num">10+</div>
+          <div class="label">Tech Stack Specializations</div>
+        </div>
+        <div class="stat-item">
+          <div class="num">4.9 / 5.0</div>
+          <div class="label">Client Satisfaction Rating</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filter Controls Section -->
+  <section class="filter-section">
+    <div class="container">
+      <div class="filter-container">
+        <button class="portfolio-filter-btn active" data-filter="all">All Projects</button>
+        <button class="portfolio-filter-btn" data-filter="web">Web Applications</button>
+        <button class="portfolio-filter-btn" data-filter="mobile">Mobile Apps</button>
+        <button class="portfolio-filter-btn" data-filter="enterprise">Enterprise & Spring Boot</button>
+        <button class="portfolio-filter-btn" data-filter="cloud">Cloud & SaaS</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Grid Section -->
+  <section class="portfolio-grid-section">
+    <div class="container">
+      <div class="portfolio-grid">
+
+        <!-- Card 1: FinTech PayGate -->
+        <div class="portfolio-card" data-category="enterprise">
+          <div class="card-preview-header">
+            <span class="card-category-badge">Enterprise & Spring Boot</span>
+            <i class="fas fa-shield-halved card-preview-icon"></i>
+          </div>
+          <div class="card-body">
+            <div>
+              <h3 class="card-title">FinTech PayGate</h3>
+              <div class="card-client-tag">Global Pay Corp • 4 Months</div>
+              <p class="card-desc">
+                High-concurrency payment gateway handling $10M+ daily transactions with microservices architecture, JWT security, and Kafka stream processing.
+              </p>
+              <div class="tech-stack-row">
+                <span class="tech-badge">Java 21</span>
+                <span class="tech-badge">Spring Boot 3</span>
+                <span class="tech-badge">Kafka</span>
+                <span class="tech-badge">Redis</span>
+              </div>
+              <div class="card-metrics-preview">
+                <div>
+                  <div class="metric-sub-val">$10M+ / Day</div>
+                  <div class="metric-sub-lbl">Processing Vol</div>
+                </div>
+                <div>
+                  <div class="metric-sub-val">&lt; 85ms</div>
+                  <div class="metric-sub-lbl">API Latency</div>
+                </div>
+              </div>
+            </div>
+            <button class="card-action-btn" onclick="openProjectModal('paygate')">
+              View Full Case Study <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 2: NovaCloud SaaS -->
+        <div class="portfolio-card" data-category="web">
+          <div class="card-preview-header">
+            <span class="card-category-badge">Web Applications</span>
+            <i class="fas fa-chart-pie card-preview-icon"></i>
+          </div>
+          <div class="card-body">
+            <div>
+              <h3 class="card-title">NovaCloud SaaS</h3>
+              <div class="card-client-tag">Nova Systems Inc. • 3 Months</div>
+              <p class="card-desc">
+                Multi-tenant B2B SaaS analytics dashboard featuring dynamic charting, customizable widgets, and real-time infrastructure asset tracking.
+              </p>
+              <div class="tech-stack-row">
+                <span class="tech-badge">HTML5 / JS</span>
+                <span class="tech-badge">Chart.js</span>
+                <span class="tech-badge">Spring Boot</span>
+                <span class="tech-badge">MySQL</span>
+              </div>
+              <div class="card-metrics-preview">
+                <div>
+                  <div class="metric-sub-val">0.6s</div>
+                  <div class="metric-sub-lbl">Page Load</div>
+                </div>
+                <div>
+                  <div class="metric-sub-val">120+</div>
+                  <div class="metric-sub-lbl">B2B Tenants</div>
+                </div>
+              </div>
+            </div>
+            <button class="card-action-btn" onclick="openProjectModal('novacloud')">
+              View Full Case Study <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 3: HealthSync Mobile -->
+        <div class="portfolio-card" data-category="mobile">
+          <div class="card-preview-header">
+            <span class="card-category-badge">Mobile Applications</span>
+            <i class="fas fa-notes-medical card-preview-icon"></i>
+          </div>
+          <div class="card-body">
+            <div>
+              <h3 class="card-title">HealthSync Telehealth</h3>
+              <div class="card-client-tag">MediConnect Health • 5 Months</div>
+              <p class="card-desc">
+                HIPAA-compliant telemedicine iOS & Android app supporting WebRTC video consultations, encrypted EHR synchronization, and prescription management.
+              </p>
+              <div class="tech-stack-row">
+                <span class="tech-badge">Flutter</span>
+                <span class="tech-badge">WebRTC</span>
+                <span class="tech-badge">Spring Boot</span>
+                <span class="tech-badge">PostgreSQL</span>
+              </div>
+              <div class="card-metrics-preview">
+                <div>
+                  <div class="metric-sub-val">250k+</div>
+                  <div class="metric-sub-lbl">Consultations</div>
+                </div>
+                <div>
+                  <div class="metric-sub-val">4.9 / 5</div>
+                  <div class="metric-sub-lbl">App Store Rating</div>
+                </div>
+              </div>
+            </div>
+            <button class="card-action-btn" onclick="openProjectModal('healthsync')">
+              View Full Case Study <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 4: OmniCommerce Headless -->
+        <div class="portfolio-card" data-category="web">
+          <div class="card-preview-header">
+            <span class="card-category-badge">Web Applications</span>
+            <i class="fas fa-bag-shopping card-preview-icon"></i>
+          </div>
+          <div class="card-body">
+            <div>
+              <h3 class="card-title">OmniCommerce Platform</h3>
+              <div class="card-client-tag">Aura Retail Group • 3.5 Months</div>
+              <p class="card-desc">
+                Next-generation headless e-commerce platform with sub-second checkout, Spring Boot backend order microservices, and Elasticsearch indexing.
+              </p>
+              <div class="tech-stack-row">
+                <span class="tech-badge">Modern JS</span>
+                <span class="tech-badge">Spring Boot</span>
+                <span class="tech-badge">Stripe API</span>
+                <span class="tech-badge">Elasticsearch</span>
+              </div>
+              <div class="card-metrics-preview">
+                <div>
+                  <div class="metric-sub-val">4x Faster</div>
+                  <div class="metric-sub-lbl">Page Speed</div>
+                </div>
+                <div>
+                  <div class="metric-sub-val">+38%</div>
+                  <div class="metric-sub-lbl">Conversion Rate</div>
+                </div>
+              </div>
+            </div>
+            <button class="card-action-btn" onclick="openProjectModal('omnicommerce')">
+              View Full Case Study <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 5: DataPulse AI -->
+        <div class="portfolio-card" data-category="cloud">
+          <div class="card-preview-header">
+            <span class="card-category-badge">Cloud & SaaS</span>
+            <i class="fas fa-robot card-preview-icon"></i>
+          </div>
+          <div class="card-body">
+            <div>
+              <h3 class="card-title">DataPulse AI Support</h3>
+              <div class="card-client-tag">LogiTech Solutions • 2 Months</div>
+              <p class="card-desc">
+                AI-powered customer service support widget & ticket resolution backend integrated with natural language processing and CRM pipelines.
+              </p>
+              <div class="tech-stack-row">
+                <span class="tech-badge">Java 21</span>
+                <span class="tech-badge">Spring Boot</span>
+                <span class="tech-badge">LLM API</span>
+                <span class="tech-badge">MongoDB</span>
+              </div>
+              <div class="card-metrics-preview">
+                <div>
+                  <div class="metric-sub-val">-65%</div>
+                  <div class="metric-sub-lbl">Support Tickets</div>
+                </div>
+                <div>
+                  <div class="metric-sub-val">15k+</div>
+                  <div class="metric-sub-lbl">Leads Captured</div>
+                </div>
+              </div>
+            </div>
+            <button class="card-action-btn" onclick="openProjectModal('datapulse')">
+              View Full Case Study <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 6: CyberGuard Security -->
+        <div class="portfolio-card" data-category="enterprise">
+          <div class="card-preview-header">
+            <span class="card-category-badge">Enterprise & Spring Boot</span>
+            <i class="fas fa-network-wired card-preview-icon"></i>
+          </div>
+          <div class="card-body">
+            <div>
+              <h3 class="card-title">CyberGuard Network Portal</h3>
+              <div class="card-client-tag">Apex Defense • 4 Months</div>
+              <p class="card-desc">
+                Enterprise security portal monitoring 50,000+ network endpoints with real-time Spring Boot event listeners and automated alert triggers.
+              </p>
+              <div class="tech-stack-row">
+                <span class="tech-badge">Java 21</span>
+                <span class="tech-badge">Spring Boot</span>
+                <span class="tech-badge">Kafka</span>
+                <span class="tech-badge">Spring Security</span>
+              </div>
+              <div class="card-metrics-preview">
+                <div>
+                  <div class="metric-sub-val">50,000+</div>
+                  <div class="metric-sub-lbl">Endpoints Monitored</div>
+                </div>
+                <div>
+                  <div class="metric-sub-val">&lt; 2s</div>
+                  <div class="metric-sub-lbl">Alert Latency</div>
+                </div>
+              </div>
+            </div>
+            <button class="card-action-btn" onclick="openProjectModal('cyberguard')">
+              View Full Case Study <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CTA Banner -->
+      <div class="cta-banner">
+        <h2 style="font-family:'Plus Jakarta Sans', sans-serif; font-size:2rem; font-weight:800; color:#ffffff; margin-bottom:12px;">
+          Have a Project Idea in Mind?
+        </h2>
+        <p style="color:#94a3b8; font-size:1.05rem; max-width:650px; margin:0 auto 28px auto;">
+          Whether you need a custom Java Spring Boot backend, a responsive web app, or an enterprise cloud solution, Techzyncmedia delivers guaranteed results.
+        </p>
+        <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap;">
+          <a href="/contact.html" class="btn btn-primary" style="background:#2563eb; color:#ffffff; padding:14px 32px; font-weight:700; border-radius:8px; text-decoration:none;">
+            Request Project Consultation
+          </a>
+          <a href="/it-solutions.html" class="btn btn-outline" style="border:1px solid #3b82f6; color:#38bdf8; padding:14px 32px; font-weight:700; border-radius:8px; text-decoration:none;">
+            Explore All IT Solutions
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Interactive Case Study Modal -->
+  <div id="projectModal" class="modal-overlay">
+    <div class="modal-content">
+      <button id="closeModalBtn" class="modal-close-btn">&times;</button>
+      
+      <div id="modalCategory" class="modal-header-tag">Category Tag</div>
+      <h2 id="modalTitle" class="modal-header-title">Project Title</h2>
+      <div id="modalClient" class="modal-header-sub">Client Details</div>
+
+      <!-- Metrics Grid -->
+      <div id="modalMetrics" class="modal-metrics-grid"></div>
+
+      <div class="modal-section-title"><i class="fas fa-circle-info text-primary"></i> Executive Overview</div>
+      <p id="modalTagline" style="font-weight:600; color:#38bdf8; margin-bottom:8px;"></p>
+      <p id="modalSummary" style="color:#94a3b8; line-height:1.6;"></p>
+
+      <div class="modal-section-title"><i class="fas fa-triangle-exclamation text-warning"></i> The Challenge</div>
+      <p id="modalChallenge" style="color:#94a3b8; line-height:1.6;"></p>
+
+      <div class="modal-section-title"><i class="fas fa-lightbulb text-success"></i> Our Solution & Engineering</div>
+      <p id="modalSolution" style="color:#94a3b8; line-height:1.6;"></p>
+
+      <div class="modal-section-title"><i class="fas fa-microchip"></i> Technology Stack</div>
+      <div id="modalTechStack" class="tech-stack-row" style="margin-top:10px;"></div>
+
+      <div class="modal-section-title"><i class="fas fa-list-check"></i> Key Deliverables & Features</div>
+      <ul id="modalFeatures" class="modal-features-list"></ul>
+
+      <div style="margin-top:30px; border-top:1px solid #334155; padding-top:20px; text-align:center;">
+        <a href="/contact.html" class="btn btn-primary" style="background:#2563eb; color:#ffffff; padding:12px 28px; font-weight:700; border-radius:6px; text-decoration:none; display:inline-block;">
+          Build a Similar System With Us
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer" style="background:#0b0f19; border-top:1px solid #1e293b; padding:60px 0 30px 0; color:#94a3b8;">
+    <div class="container">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:40px;">
+        <div>
+          <a href="/" class="logo" style="display:flex; align-items:center; gap:10px; margin-bottom:16px;">
+            <img src="/images/logo.png" alt="Techzyncmedia Logo" style="height:40px; width:auto;">
+            <span style="color:#ffffff; font-weight:800; font-size:1.2rem;">Techzync<span style="color:#38bdf8;">media</span></span>
+          </a>
+          <p style="font-size:0.88rem; line-height:1.6;">
+            Techzyncmedia is a premier IT solutions agency specializing in custom mobile & web applications, Java Spring Boot engineering, digital marketing, and enterprise web solutions.
+          </p>
+        </div>
+
+        <div>
+          <h4 style="font-size:0.95rem; font-weight:700; margin-bottom:16px; color:#ffffff;">Quick Links</h4>
+          <ul style="display:flex; flex-direction:column; gap:10px; font-size:0.88rem; color:#94a3b8; list-style:none; padding:0;">
+            <li><a href="/index.html" style="color:#94a3b8; text-decoration:none;">Home</a></li>
+            <li><a href="/who-we-are.html" style="color:#94a3b8; text-decoration:none;">Who We Are</a></li>
+            <li><a href="/it-solutions.html" style="color:#94a3b8; text-decoration:none;">IT Solutions</a></li>
+            <li><a href="/technologies.html" style="color:#94a3b8; text-decoration:none;">Technologies</a></li>
+            <li><a href="/portfolio.html" style="color:#38bdf8; text-decoration:none; font-weight:700;">Portfolio</a></li>
+            <li><a href="/blogs.html" style="color:#94a3b8; text-decoration:none;">Blogs</a></li>
+            <li><a href="/career.html" style="color:#94a3b8; text-decoration:none;">Career</a></li>
+            <li><a href="/contact.html" style="color:#94a3b8; text-decoration:none;">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="font-size:0.95rem; font-weight:700; margin-bottom:16px; color:#ffffff;">Legal & Policies</h4>
+          <ul style="display:flex; flex-direction:column; gap:10px; font-size:0.88rem; color:#94a3b8; list-style:none; padding:0;">
+            <li><a href="/privacy-policy.html" style="color:#94a3b8; text-decoration:none;">Privacy Policy</a></li>
+            <li><a href="/terms-conditions.html" style="color:#94a3b8; text-decoration:none;">Terms & Conditions</a></li>
+            <li><a href="/refund-cancellation-policy.html" style="color:#94a3b8; text-decoration:none;">Refund & Cancellation</a></li>
+            <li><a href="/service-delivery-policy.html" style="color:#94a3b8; text-decoration:none;">Service Delivery Policy</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="font-size:0.95rem; font-weight:700; margin-bottom:16px; color:#ffffff;">Support & Business</h4>
+          <p style="font-size:0.88rem; color:#94a3b8;">Email: <a href="mailto:contact@techzyncmedia.com" style="color:#38bdf8;">contact@techzyncmedia.com</a></p>
+          <p style="font-size:0.88rem; color:#94a3b8; margin-top:6px;">Phone: +91 9372266379</p>
+          <p style="font-size:0.88rem; color:#94a3b8; margin-top:6px;">Location: Online Agency - Pune, Maharashtra</p>
+        </div>
+      </div>
+
+      <div style="border-top:1px solid #1e293b; color:#94a3b8; margin-top:50px; padding-top:20px; display:flex; justify-content:space-between; flex-wrap:wrap; font-size:0.85rem;">
+        <span>&copy; 2026 Techzyncmedia. All rights reserved.</span>
+        <span>Secured with SSL & PCI-DSS Standards</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  <script src="/js/portfolio.js"></script>
+  <script src="/js/chatbot.js" defer></script>
+</body>
+</html>

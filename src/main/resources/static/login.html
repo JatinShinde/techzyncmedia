@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Portal Login | Techzyncmedia</title>
+  <meta name="description" content="Client Login Portal for Techzyncmedia - Access your purchased service history, ongoing web engineering projects, and tax invoices.">
+  <link rel="icon" type="image/png" href="/images/logo.png">
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/style.css?v=11">
+  <style>
+    .auth-container {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 120px 20px 60px 20px;
+      background: #0f172a;
+    }
+    .auth-card {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 16px;
+      padding: 40px;
+      width: 100%;
+      max-width: 440px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+      color: #ffffff;
+    }
+    .form-control-dark {
+      width: 100%;
+      padding: 12px 16px;
+      background: #0f172a;
+      border: 1px solid #334155;
+      border-radius: 8px;
+      color: #ffffff;
+      font-size: 0.95rem;
+      margin-top: 6px;
+      margin-bottom: 18px;
+      box-sizing: border-box;
+    }
+    .form-control-dark:focus {
+      outline: none;
+      border-color: #38bdf8;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header" style="background:#0f172a; border-bottom:1px solid #1e293b;">
+    <div class="container nav-container">
+      <a href="/" class="logo" style="display:flex; align-items:center; gap:12px;">
+        <img src="/images/logo.png" alt="Techzyncmedia Logo" style="height:46px; width:auto; object-fit:contain;">
+        <span style="color:#ffffff; font-weight:800; font-size:1.3rem;">Techzync<span style="color:#38bdf8;">media</span></span>
+      </a>
+      <nav class="nav-links">
+        <a href="/index.html" class="nav-link">Home</a>
+        <a href="/who-we-are.html" class="nav-link">Who We Are</a>
+        <a href="/it-solutions.html" class="nav-link">IT Solutions</a>
+        <a href="/technologies.html" class="nav-link">Technologies</a>
+        <a href="/portfolio.html" class="nav-link">Portfolio</a>
+        <a href="/contact.html" class="nav-link">Contact Us</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="/login.html" class="btn btn-primary btn-sm" style="background:#38bdf8; color:#0f172a; font-weight:700;">Client Portal</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Login Main -->
+  <div class="auth-container">
+    <div class="auth-card">
+      <div style="text-align:center; margin-bottom:28px;">
+        <span style="font-size:2.5rem;">🔐</span>
+        <h2 style="font-size:1.8rem; font-weight:800; margin-top:8px;">Client Portal Login</h2>
+        <p style="color:#94a3b8; font-size:0.9rem; margin-top:4px;">Sign in to view your purchased packages & invoices</p>
+      </div>
+
+      <form id="clientLoginForm">
+        <div>
+          <label style="font-size:0.88rem; font-weight:700; color:#cbd5e1;">Email Address *</label>
+          <input type="email" id="loginEmail" class="form-control-dark" placeholder="client@example.com" required>
+        </div>
+
+        <div>
+          <label style="font-size:0.88rem; font-weight:700; color:#cbd5e1;">Password *</label>
+          <input type="password" id="loginPassword" class="form-control-dark" placeholder="••••••••" required>
+        </div>
+
+        <div id="loginAlert" style="display:none; padding:10px 14px; border-radius:6px; font-size:0.88rem; margin-bottom:16px;"></div>
+
+        <button type="submit" class="btn btn-primary" style="width:100%; background:#2563eb; color:#ffffff; padding:12px; font-weight:700; border-radius:8px; border:none; cursor:pointer;">
+          Log In to Dashboard
+        </button>
+      </form>
+
+      <div style="text-align:center; margin-top:24px; font-size:0.88rem; color:#94a3b8;">
+        Don't have a client account? <a href="/register.html" style="color:#38bdf8; font-weight:700;">Register Here</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer" style="background:#0f172a; color:#ffffff; padding:40px 0 20px 0; border-top:1px solid #1e293b;">
+    <div class="container" style="text-align:center; font-size:0.85rem; color:#94a3b8;">
+      &copy; 2026 Techzyncmedia. All rights reserved. | Secured Client Portal
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('clientLoginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const email = document.getElementById('loginEmail').value.trim();
+      const alertBox = document.getElementById('loginAlert');
+      
+      // Store session in localStorage for demo customer portal
+      localStorage.setItem('techzync_client_logged_in', 'true');
+      localStorage.setItem('techzync_client_email', email);
+      
+      alertBox.style.display = 'block';
+      alertBox.style.background = 'rgba(16, 185, 129, 0.2)';
+      alertBox.style.color = '#34d399';
+      alertBox.style.border = '1px solid #059669';
+      alertBox.innerText = 'Login successful! Redirecting to customer dashboard...';
+
+      setTimeout(() => {
+        window.location.href = '/dashboard.html';
+      }, 1000);
+    });
+  </script>
+</body>
+</html>

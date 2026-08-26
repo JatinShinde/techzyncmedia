@@ -180,12 +180,29 @@
       document.getElementById('dashClientTitle').innerText = `Welcome, ${name}`;
       document.getElementById('dashClientEmail').innerText = `Account Email: ${email}`;
 
-      // Load orders
-      let savedOrders = JSON.parse(localStorage.getItem('techzync_client_orders')) || defaultDemoOrders;
+      // Check if arriving from successful payment
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get("payment") === "success") {
+        const txId = urlParams.get("tx") || "pay_test_success";
+        alert("🎉 Razorpay Test Payment Successful! Transaction Ref ID: " + txId + "\nYour invoice has been added to your dashboard history below.");
+      }
+
+      // Load orders from Razorpay checkout + demo orders
+      const userPurchases = JSON.parse(localStorage.getItem('techzync_purchases') || "[]");
+      const normalizedUserPurchases = userPurchases.map(p => ({
+        orderId: p.orderId,
+        package: p.packageName,
+        gatewayId: p.transactionId,
+        date: p.date,
+        amount: p.amount,
+        status: p.status || "SUCCESS"
+      }));
+
+      let allOrders = [...normalizedUserPurchases, ...defaultDemoOrders];
       const tbody = document.getElementById('ordersTableBody');
       tbody.innerHTML = '';
 
-      savedOrders.forEach(ord => {
+      allOrders.forEach(ord => {
         const tr = document.createElement('tr');
         tr.innerHTML = `
           <td style="font-weight:700; color:#38bdf8;">${ord.orderId}</td>
@@ -194,7 +211,7 @@
           <td style="color:#94a3b8; font-size:0.88rem;">${ord.date}</td>
           <td style="font-weight:800; color:#ffffff;">${ord.amount}</td>
           <td><span class="badge-success">✓ ${ord.status}</span></td>
-          <td><a href="#" onclick="alert('Downloading Official GST Receipt for ${ord.orderId}'); return false;" class="btn-receipt">📄 Download Receipt</a></td>
+          <td><a href="#" onclick="alert('Downloading Official GST Receipt for ${ord.orderId}\\nPayment Ref: ${ord.gatewayId}'); return false;" class="btn-receipt">📄 Download Receipt</a></td>
         `;
         tbody.appendChild(tr);
       });

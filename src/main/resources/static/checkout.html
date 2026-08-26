@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout & Payment - Techzyncmedia</title>
+  <meta name="description" content="Secure Online Checkout for Techzyncmedia IT Services and Solutions Packages. Powered by Razorpay SSL.">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: #0f172a;
+      color: #f8fafc;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .checkout-section {
+      padding: 60px 0 100px 0;
+      flex-grow: 1;
+    }
+    .checkout-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 36px;
+    }
+    @media (max-width: 900px) {
+      .checkout-grid { grid-template-columns: 1fr; }
+    }
+    .checkout-card {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    .form-label-dark {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #cbd5e1;
+      margin-bottom: 8px;
+    }
+    .form-control-dark {
+      width: 100%;
+      padding: 12px 16px;
+      background: #0f172a;
+      border: 1px solid #334155;
+      border-radius: 8px;
+      color: #ffffff;
+      font-size: 0.95rem;
+      transition: border-color 0.2s ease;
+      box-sizing: border-box;
+    }
+    .form-control-dark:focus {
+      outline: none;
+      border-color: #38bdf8;
+    }
+    .package-selector {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .package-option {
+      border: 2px solid #334155;
+      border-radius: 12px;
+      padding: 16px 20px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.2s ease;
+      background: #0f172a;
+    }
+    .package-option.selected {
+      border-color: #38bdf8;
+      background: rgba(56, 189, 248, 0.1);
+    }
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px dashed #334155;
+      font-size: 0.95rem;
+      color: #cbd5e1;
+    }
+    .summary-row.total {
+      border-bottom: none;
+      border-top: 2px solid #38bdf8;
+      margin-top: 12px;
+      padding-top: 16px;
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #ffffff;
+    }
+    .btn-pay {
+      background: linear-gradient(135deg, #2563eb 0%, #0284c7 100%);
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 1.1rem;
+      padding: 16px 28px;
+      border-radius: 8px;
+      width: 100%;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      margin-top: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .btn-pay:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
+    }
+    .badge-test {
+      background: rgba(245, 158, 11, 0.15);
+      border: 1px solid #f59e0b;
+      color: #fbbf24;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation Bar Header -->
+  <header class="header" style="background:#0f172a; border-bottom:1px solid #1e293b; padding:16px 0;">
+    <div class="container nav-container" style="display:flex; justify-content:space-between; align-items:center;">
+      <a href="/" class="logo" style="display:flex; align-items:center; gap:12px; text-decoration:none;">
+        <img src="/images/logo.png" alt="Techzyncmedia Logo" style="height:46px; width:auto; object-fit:contain;">
+        <span style="color:#ffffff; font-weight:800; font-size:1.3rem;">Techzync<span style="color:#38bdf8;">media</span></span>
+      </a>
+      <nav class="nav-links">
+        <a href="/index.html" class="nav-link">Home</a>
+        <a href="/it-solutions.html" class="nav-link">IT Solutions</a>
+        <a href="/index.html#pricing" class="nav-link">Pricing Packages</a>
+        <a href="/login.html" class="nav-link" style="color:#38bdf8; font-weight:700;">Client Portal</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Checkout Section -->
+  <main class="checkout-section">
+    <div class="container" style="max-width:1100px;">
+      
+      <div style="margin-bottom:32px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+        <div>
+          <h1 style="font-size:2.2rem; font-weight:800; color:#ffffff; margin-bottom:6px;">Online Checkout & Payment</h1>
+          <p style="color:#94a3b8; font-size:0.95rem;">Select your service package and complete secure online payment.</p>
+        </div>
+        <div>
+          <span class="badge-test">⚡ Razorpay Test Mode Kit Enabled</span>
+        </div>
+      </div>
+
+      <div class="checkout-grid">
+        
+        <!-- Left: Customer Details Form -->
+        <div class="checkout-card">
+          <h2 style="font-size:1.3rem; font-weight:700; color:#ffffff; margin-bottom:24px; border-bottom:1px solid #334155; padding-bottom:12px;">1. Client Billing Details</h2>
+          
+          <form id="checkoutForm" onsubmit="event.preventDefault(); startPayment();">
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px;">
+              <div>
+                <label class="form-label-dark" for="clientName">Full Name *</label>
+                <input type="text" id="clientName" class="form-control-dark" placeholder="John Doe" required>
+              </div>
+              <div>
+                <label class="form-label-dark" for="clientCompany">Company Name</label>
+                <input type="text" id="clientCompany" class="form-control-dark" placeholder="Acme Solutions">
+              </div>
+            </div>
+
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px;">
+              <div>
+                <label class="form-label-dark" for="clientEmail">Email Address *</label>
+                <input type="email" id="clientEmail" class="form-control-dark" placeholder="john@example.com" required>
+              </div>
+              <div>
+                <label class="form-label-dark" for="clientPhone">Phone Number *</label>
+                <input type="tel" id="clientPhone" class="form-control-dark" placeholder="+91 9372266379" required>
+              </div>
+            </div>
+
+            <div style="margin-bottom:16px;">
+              <label class="form-label-dark" for="clientAddress">Billing Address *</label>
+              <input type="text" id="clientAddress" class="form-control-dark" placeholder="Shop No.14 Xenia Society, Kolte Patil Downtown Fountain Road" required>
+            </div>
+
+            <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; margin-bottom:24px;">
+              <div>
+                <label class="form-label-dark" for="clientCity">City *</label>
+                <input type="text" id="clientCity" class="form-control-dark" value="Pune" required>
+              </div>
+              <div>
+                <label class="form-label-dark" for="clientState">State *</label>
+                <input type="text" id="clientState" class="form-control-dark" value="Maharashtra" required>
+              </div>
+              <div>
+                <label class="form-label-dark" for="clientPincode">Pincode *</label>
+                <input type="text" id="clientPincode" class="form-control-dark" value="411014" required>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-pay">
+              <span>Pay Online via Razorpay</span>
+              <span>🔒</span>
+            </button>
+            <p style="text-align:center; color:#94a3b8; font-size:0.82rem; margin-top:12px;">
+              Secured with 256-bit SSL & Razorpay PCI-DSS Test Gateway
+            </p>
+          </form>
+        </div>
+
+        <!-- Right: Package Selector & Order Summary -->
+        <div class="checkout-card">
+          <h2 style="font-size:1.3rem; font-weight:700; color:#ffffff; margin-bottom:20px; border-bottom:1px solid #334155; padding-bottom:12px;">2. Select Service Package</h2>
+          
+          <div class="package-selector">
+            <div class="package-option" id="opt-starter" onclick="selectPackage('starter')">
+              <div>
+                <div style="font-weight:700; color:#ffffff;">Starter Package</div>
+                <div style="font-size:0.82rem; color:#94a3b8;">Essential Web App & Audit</div>
+              </div>
+              <div style="font-weight:800; color:#38bdf8;">₹9,999</div>
+            </div>
+
+            <div class="package-option selected" id="opt-business" onclick="selectPackage('business')">
+              <div>
+                <div style="font-weight:700; color:#ffffff;">Business Package (Popular)</div>
+                <div style="font-size:0.82rem; color:#94a3b8;">Custom Web & Java API Suite</div>
+              </div>
+              <div style="font-weight:800; color:#38bdf8;">₹24,999</div>
+            </div>
+
+            <div class="package-option" id="opt-enterprise" onclick="selectPackage('enterprise')">
+              <div>
+                <div style="font-weight:700; color:#ffffff;">Enterprise Package</div>
+                <div style="font-size:0.82rem; color:#94a3b8;">Full Engineering & Retainer</div>
+              </div>
+              <div style="font-weight:800; color:#38bdf8;">₹49,999</div>
+            </div>
+          </div>
+
+          <h3 style="font-size:1.1rem; font-weight:700; color:#ffffff; margin-bottom:16px;">Order Summary</h3>
+
+          <div class="summary-row">
+            <span>Package Subtotal</span>
+            <span id="sumSubtotal">₹24,999.00</span>
+          </div>
+          <div class="summary-row">
+            <span>GST (18%)</span>
+            <span id="sumGst">₹4,499.82</span>
+          </div>
+          <div class="summary-row">
+            <span>Platform & Setup Fee</span>
+            <span style="color:#10b981; font-weight:700;">FREE</span>
+          </div>
+          <div class="summary-row total">
+            <span>Total Payable Amount</span>
+            <span id="sumTotal" style="color:#38bdf8;">₹29,498.82</span>
+          </div>
+
+          <div style="margin-top:24px; background:#0f172a; padding:16px; border-radius:8px; border:1px solid #334155; font-size:0.85rem; color:#94a3b8;">
+            <strong style="color:#ffffff; display:block; margin-bottom:4px;">🔒 Guarantee & Terms:</strong>
+            Includes 100% money-back delivery guarantee as per our <a href="/refund-cancellation-policy.html" target="_blank" style="color:#38bdf8;">Refund Policy</a>.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer style="background:#0b0f19; border-top:1px solid #1e293b; padding:24px 0; text-align:center; color:#94a3b8; font-size:0.85rem;">
+    <div class="container">
+      &copy; 2026 Techzyncmedia. All Rights Reserved. Shop No.14 Xenia Society, Kharadi Pune Maharashtra 411014 | Phone: +91 9372266379
+    </div>
+  </footer>
+
+  <!-- Include Razorpay Official SDK -->
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <!-- Include Techzyncmedia Checkout Script -->
+  <script src="/js/checkout.js"></script>
+  <script>
+    let currentPackage = "business";
+
+    // Auto-select package from URL param e.g. checkout.html?package=starter
+    window.addEventListener("DOMContentLoaded", () => {
+      const params = new URLSearchParams(window.location.search);
+      const pkgParam = params.get("package");
+      if (pkgParam && PACKAGES[pkgParam]) {
+        selectPackage(pkgParam);
+      }
+      
+      // Auto-prefill if logged in user
+      const savedEmail = localStorage.getItem("techzync_client_email");
+      const savedName = localStorage.getItem("techzync_client_name");
+      if (savedEmail) document.getElementById("clientEmail").value = savedEmail;
+      if (savedName) document.getElementById("clientName").value = savedName;
+    });
+
+    function selectPackage(pkgKey) {
+      currentPackage = pkgKey;
+      document.querySelectorAll(".package-option").forEach(el => el.classList.remove("selected"));
+      document.getElementById("opt-" + pkgKey).classList.add("selected");
+
+      const pkg = PACKAGES[pkgKey];
+      document.getElementById("sumSubtotal").innerText = "₹" + pkg.price.toLocaleString('en-IN') + ".00";
+      document.getElementById("sumGst").innerText = "₹" + pkg.gst.toLocaleString('en-IN', {minimumFractionDigits:2});
+      document.getElementById("sumTotal").innerText = "₹" + pkg.total.toLocaleString('en-IN', {minimumFractionDigits:2});
+    }
+
+    function startPayment() {
+      const name = document.getElementById("clientName").value.trim();
+      const email = document.getElementById("clientEmail").value.trim();
+      const phone = document.getElementById("clientPhone").value.trim();
+      const company = document.getElementById("clientCompany").value.trim();
+
+      launchRazorpayCheckout(currentPackage, {
+        name: name,
+        email: email,
+        phone: phone,
+        company: company
+      });
+    }
+  </script>
+</body>
+</html>

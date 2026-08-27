@@ -19,7 +19,7 @@
       flex-direction: column;
     }
     .checkout-section {
-      padding: 60px 0 100px 0;
+      padding: 50px 0 100px 0;
       flex-grow: 1;
     }
     .checkout-grid {
@@ -80,12 +80,29 @@
       border-color: #38bdf8;
       background: rgba(56, 189, 248, 0.1);
     }
+    .addon-card {
+      background: #0f172a;
+      border: 1px solid #334155;
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      user-select: none;
+      transition: border-color 0.2s ease;
+    }
+    .addon-card.selected {
+      border-color: #38bdf8;
+      background: rgba(56, 189, 248, 0.05);
+    }
     .summary-row {
       display: flex;
       justify-content: space-between;
-      padding: 12px 0;
+      padding: 10px 0;
       border-bottom: 1px dashed #334155;
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       color: #cbd5e1;
     }
     .summary-row.total {
@@ -93,7 +110,7 @@
       border-top: 2px solid #38bdf8;
       margin-top: 12px;
       padding-top: 16px;
-      font-size: 1.2rem;
+      font-size: 1.25rem;
       font-weight: 800;
       color: #ffffff;
     }
@@ -129,6 +146,18 @@
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
+    .returning-banner {
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      color: #e2e8f0;
+      padding: 12px 20px;
+      border-radius: 10px;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.9rem;
+    }
   </style>
 </head>
 <body>
@@ -153,7 +182,7 @@
   <main class="checkout-section">
     <div class="container" style="max-width:1100px;">
       
-      <div style="margin-bottom:32px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+      <div style="margin-bottom:24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
         <div>
           <h1 style="font-size:2.2rem; font-weight:800; color:#ffffff; margin-bottom:6px;">Online Checkout & Payment</h1>
           <p style="color:#94a3b8; font-size:0.95rem;">Select your service package and complete secure online payment.</p>
@@ -161,6 +190,15 @@
         <div>
           <span class="badge-test">⚡ Razorpay Test Mode Kit Enabled</span>
         </div>
+      </div>
+
+      <!-- Returning Customer Banner -->
+      <div id="returningBanner" class="returning-banner">
+        <div>
+          <span>🔑 Returning Customer? </span>
+          <a href="/login.html?redirect=checkout" style="color:#38bdf8; font-weight:700; text-decoration:none; margin-left:6px;">Click here to log into your account &rarr;</a>
+        </div>
+        <span style="color:#94a3b8; font-size:0.82rem;">Auto-fills your saved billing address</span>
       </div>
 
       <div class="checkout-grid">
@@ -222,9 +260,9 @@
           </form>
         </div>
 
-        <!-- Right: Package Selector & Order Summary -->
+        <!-- Right: Package Selector, Add-Ons & Order Summary -->
         <div class="checkout-card">
-          <h2 style="font-size:1.3rem; font-weight:700; color:#ffffff; margin-bottom:20px; border-bottom:1px solid #334155; padding-bottom:12px;">2. Select Service Package</h2>
+          <h2 style="font-size:1.3rem; font-weight:700; color:#ffffff; margin-bottom:20px; border-bottom:1px solid #334155; padding-bottom:12px;">2. Select Package & Add-Ons</h2>
           
           <div class="package-selector">
             <div class="package-option" id="opt-starter" onclick="selectPackage('starter')">
@@ -252,11 +290,54 @@
             </div>
           </div>
 
-          <h3 style="font-size:1.1rem; font-weight:700; color:#ffffff; margin-bottom:16px;">Order Summary</h3>
+          <!-- Checkout Add-Ons Section -->
+          <h3 style="font-size:1rem; font-weight:700; color:#ffffff; margin-bottom:12px;">Optional Service Upgrades</h3>
+          <div style="margin-bottom:24px;">
+            
+            <div class="addon-card" onclick="toggleAddon('express')">
+              <div style="display:flex; align-items:center; gap:12px;">
+                <input type="checkbox" id="addon-express" style="width:18px; height:18px; cursor:pointer;" onclick="event.stopPropagation(); recalculateTotals();">
+                <div>
+                  <div style="font-weight:700; font-size:0.88rem; color:#ffffff;">Express 48-Hour Priority Delivery</div>
+                  <div style="font-size:0.78rem; color:#94a3b8;">Accelerates code audit & deployment timeline</div>
+                </div>
+              </div>
+              <div style="font-weight:700; color:#38bdf8; font-size:0.9rem;">+₹4,999</div>
+            </div>
+
+            <div class="addon-card" onclick="toggleAddon('cloud')">
+              <div style="display:flex; align-items:center; gap:12px;">
+                <input type="checkbox" id="addon-cloud" style="width:18px; height:18px; cursor:pointer;" onclick="event.stopPropagation(); recalculateTotals();">
+                <div>
+                  <div style="font-weight:700; font-size:0.88rem; color:#ffffff;">1-Year Automated Cloud Backup & SSL</div>
+                  <div style="font-size:0.78rem; color:#94a3b8;">Daily encrypted DB backups & certificate renewal</div>
+                </div>
+              </div>
+              <div style="font-weight:700; color:#38bdf8; font-size:0.9rem;">+₹2,499</div>
+            </div>
+
+            <div class="addon-card" onclick="toggleAddon('support')">
+              <div style="display:flex; align-items:center; gap:12px;">
+                <input type="checkbox" id="addon-support" style="width:18px; height:18px; cursor:pointer;" onclick="event.stopPropagation(); recalculateTotals();">
+                <div>
+                  <div style="font-weight:700; font-size:0.88rem; color:#ffffff;">Dedicated Technical Support Specialist</div>
+                  <div style="font-size:0.78rem; color:#94a3b8;">Direct phone/WhatsApp support channel</div>
+                </div>
+              </div>
+              <div style="font-weight:700; color:#38bdf8; font-size:0.9rem;">+₹7,499</div>
+            </div>
+
+          </div>
+
+          <h3 style="font-size:1.1rem; font-weight:700; color:#ffffff; margin-bottom:14px;">Order Summary</h3>
 
           <div class="summary-row">
-            <span>Package Subtotal</span>
+            <span>Base Package Price</span>
             <span id="sumSubtotal">₹24,999.00</span>
+          </div>
+          <div class="summary-row" id="sumAddonsRow" style="display:none;">
+            <span>Selected Upgrades</span>
+            <span id="sumAddons">₹0.00</span>
           </div>
           <div class="summary-row">
             <span>GST (18%)</span>
@@ -271,7 +352,7 @@
             <span id="sumTotal" style="color:#38bdf8;">₹29,498.82</span>
           </div>
 
-          <div style="margin-top:24px; background:#0f172a; padding:16px; border-radius:8px; border:1px solid #334155; font-size:0.85rem; color:#94a3b8;">
+          <div style="margin-top:20px; background:#0f172a; padding:14px 16px; border-radius:8px; border:1px solid #334155; font-size:0.85rem; color:#94a3b8;">
             <strong style="color:#ffffff; display:block; margin-bottom:4px;">🔒 Guarantee & Terms:</strong>
             Includes 100% money-back delivery guarantee as per our <a href="/refund-cancellation-policy.html" target="_blank" style="color:#38bdf8;">Refund Policy</a>.
           </div>
@@ -292,10 +373,21 @@
   <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
   <!-- Include Techzyncmedia Checkout Script -->
   <script src="/js/checkout.js"></script>
+  <!-- Include Cart Manager Script -->
+  <script src="/js/cart.js"></script>
   <script>
     let currentPackage = "business";
+    let calculatedSubtotal = 24999;
+    let calculatedGst = 4499.82;
+    let calculatedTotal = 29498.82;
+    let selectedAddonsList = [];
 
-    // Auto-select package from URL param e.g. checkout.html?package=starter
+    const ADDON_PRICES = {
+      express: { name: "Express Priority Delivery", price: 4999 },
+      cloud: { name: "1-Year Cloud Backup & SSL", price: 2499 },
+      support: { name: "Dedicated Support Specialist", price: 7499 }
+    };
+
     window.addEventListener("DOMContentLoaded", () => {
       const params = new URLSearchParams(window.location.search);
       const pkgParam = params.get("package");
@@ -303,10 +395,18 @@
         selectPackage(pkgParam);
       }
       
-      // Auto-prefill if logged in user
+      // Auto-prefill if client is logged in
       const savedEmail = localStorage.getItem("techzync_client_email");
       const savedName = localStorage.getItem("techzync_client_name");
-      if (savedEmail) document.getElementById("clientEmail").value = savedEmail;
+      if (savedEmail) {
+        document.getElementById("clientEmail").value = savedEmail;
+        document.getElementById("returningBanner").innerHTML = `
+          <div>
+            <span style="color:#34d399; font-weight:700;">✓ Logged in as: ${savedEmail}</span>
+          </div>
+          <span style="color:#94a3b8; font-size:0.82rem;">Saved billing details loaded</span>
+        `;
+      }
       if (savedName) document.getElementById("clientName").value = savedName;
     });
 
@@ -314,11 +414,50 @@
       currentPackage = pkgKey;
       document.querySelectorAll(".package-option").forEach(el => el.classList.remove("selected"));
       document.getElementById("opt-" + pkgKey).classList.add("selected");
+      recalculateTotals();
+    }
 
-      const pkg = PACKAGES[pkgKey];
+    function toggleAddon(addonKey) {
+      const cb = document.getElementById("addon-" + addonKey);
+      cb.checked = !cb.checked;
+      const card = cb.closest(".addon-card");
+      if (cb.checked) {
+        card.classList.add("selected");
+      } else {
+        card.classList.remove("selected");
+      }
+      recalculateTotals();
+    }
+
+    function recalculateTotals() {
+      const pkg = PACKAGES[currentPackage] || PACKAGES.business;
+      let addonsSum = 0;
+      selectedAddonsList = [];
+
+      Object.keys(ADDON_PRICES).forEach(key => {
+        const cb = document.getElementById("addon-" + key);
+        if (cb && cb.checked) {
+          addonsSum += ADDON_PRICES[key].price;
+          selectedAddonsList.push(ADDON_PRICES[key].name);
+        }
+      });
+
+      calculatedSubtotal = pkg.price + addonsSum;
+      calculatedGst = calculatedSubtotal * 0.18;
+      calculatedTotal = calculatedSubtotal + calculatedGst;
+
       document.getElementById("sumSubtotal").innerText = "₹" + pkg.price.toLocaleString('en-IN') + ".00";
-      document.getElementById("sumGst").innerText = "₹" + pkg.gst.toLocaleString('en-IN', {minimumFractionDigits:2});
-      document.getElementById("sumTotal").innerText = "₹" + pkg.total.toLocaleString('en-IN', {minimumFractionDigits:2});
+      
+      const addonsRow = document.getElementById("sumAddonsRow");
+      if (addonsSum > 0) {
+        addonsRow.style.display = "flex";
+        document.getElementById("sumAddons").innerText = "+₹" + addonsSum.toLocaleString('en-IN') + ".00";
+      } else {
+        addonsRow.style.display = "none";
+      }
+
+      document.getElementById("sumGst").innerText = "₹" + calculatedGst.toLocaleString('en-IN', {minimumFractionDigits:2});
+      document.getElementById("sumTotal").innerText = "₹" + calculatedTotal.toLocaleString('en-IN', {minimumFractionDigits:2});
     }
 
     function startPayment() {
@@ -326,12 +465,25 @@
       const email = document.getElementById("clientEmail").value.trim();
       const phone = document.getElementById("clientPhone").value.trim();
       const company = document.getElementById("clientCompany").value.trim();
+      const address = document.getElementById("clientAddress").value.trim();
+
+      const pkg = PACKAGES[currentPackage];
+      let fullTitle = pkg.name;
+      if (selectedAddonsList.length > 0) {
+        fullTitle += " (with " + selectedAddonsList.join(", ") + ")";
+      }
 
       launchRazorpayCheckout(currentPackage, {
         name: name,
         email: email,
         phone: phone,
-        company: company
+        company: company,
+        address: address,
+        packageName: fullTitle,
+        subtotal: calculatedSubtotal,
+        gstAmount: calculatedGst,
+        totalAmount: calculatedTotal,
+        addOns: selectedAddonsList
       });
     }
   </script>

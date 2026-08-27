@@ -34,6 +34,8 @@ const PACKAGES = {
 
 function launchRazorpayCheckout(packageKey, customerInfo = {}) {
   const pkg = PACKAGES[packageKey] || PACKAGES.business;
+  const finalTotal = customerInfo.totalAmount || pkg.total;
+  const packageName = customerInfo.packageName || pkg.name;
   
   if (typeof Razorpay === "undefined") {
     alert("Razorpay SDK is loading. Please check your internet connection.");
@@ -42,24 +44,30 @@ function launchRazorpayCheckout(packageKey, customerInfo = {}) {
 
   const options = {
     key: RAZORPAY_TEST_KEY,
-    amount: Math.round(pkg.total * 100), // amount in paise
+    amount: Math.round(finalTotal * 100), // amount in paise
     currency: "INR",
     name: "Techzyncmedia",
-    description: pkg.name + " - " + pkg.description,
+    description: packageName + " - IT Services Package",
     image: "/images/logo.png",
     handler: function (response) {
       // Record purchase in localStorage for client portal
       const newPurchase = {
         orderId: "TZ-" + Math.floor(100000 + Math.random() * 900000),
-        packageName: pkg.name,
+        packageName: packageName,
         transactionId: response.razorpay_payment_id || ("pay_test_" + Math.random().toString(36).substring(2, 10)),
         date: new Date().toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' }),
-        amount: "₹" + pkg.total.toLocaleString('en-IN'),
+        amount: "₹" + finalTotal.toLocaleString('en-IN', {minimumFractionDigits: 2}),
+        subtotal: customerInfo.subtotal || pkg.price,
+        gstAmount: customerInfo.gstAmount || pkg.gst,
+        addOns: customerInfo.addOns || [],
         status: "SUCCESS",
         clientName: customerInfo.name || "Valued Client",
-        clientEmail: customerInfo.email || localStorage.getItem("techzync_client_email") || "client@techzyncmedia.com"
+        clientEmail: customerInfo.email || localStorage.getItem("techzync_client_email") || "client@techzyncmedia.com",
+        clientPhone: customerInfo.phone || "+91 9372266379",
+        clientAddress: customerInfo.address || "Shop No.14 Xenia Society, Kharadi Pune 411014"
       };
 
+      // Append new order to existing user account history
       let existingPurchases = JSON.parse(localStorage.getItem("techzync_purchases") || "[]");
       existingPurchases.unshift(newPurchase);
       localStorage.setItem("techzync_purchases", JSON.stringify(existingPurchases));

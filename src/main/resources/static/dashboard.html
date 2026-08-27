@@ -151,6 +151,93 @@
     </div>
   </footer>
 
+  <!-- Automated Tax Invoice Modal -->
+  <div id="invoiceModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); backdrop-filter:blur(6px); z-index:99999; justify-content:center; align-items:center; padding:20px; box-sizing:border-box;">
+    <div style="background:#ffffff; color:#0f172a; max-width:700px; width:100%; border-radius:16px; padding:36px; box-shadow:0 20px 50px rgba(0,0,0,0.5); position:relative; font-family:'Plus Jakarta Sans', sans-serif; max-height:90vh; overflow-y:auto;">
+      <button onclick="closeInvoiceModal()" style="position:absolute; top:20px; right:20px; background:none; border:none; font-size:1.8rem; cursor:pointer; color:#64748b;">&times;</button>
+      
+      <!-- Printable Invoice Container -->
+      <div id="printableInvoice">
+        <!-- Header -->
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; border-bottom:2px solid #e2e8f0; padding-bottom:20px; margin-bottom:24px;">
+          <div>
+            <div style="font-weight:900; font-size:1.6rem; color:#0f172a;">Techzync<span style="color:#2563eb;">media</span></div>
+            <div style="font-size:0.82rem; color:#64748b; margin-top:4px; max-width:280px; line-height:1.4;">
+              Registered Address: Shop No.14 Xenia Society, Kolte Patil Downtown Fountain Road Near City Vista Opp Cheryl Building Kharadi Pune Maharashtra 411014<br>
+              Phone: +91 9372266379 | GSTIN: 27AAAAA0000A1Z5
+            </div>
+          </div>
+          <div style="text-align:right;">
+            <div style="background:#dcfce7; border:1px solid #86efac; color:#166534; font-weight:800; font-size:0.8rem; padding:4px 14px; border-radius:20px; display:inline-block; margin-bottom:8px;">✓ PAID IN FULL</div>
+            <div id="invNum" style="font-weight:800; font-size:1.1rem; color:#0f172a;">TAX INVOICE</div>
+            <div id="invDate" style="font-size:0.85rem; color:#64748b;">Date: 26 Aug 2026</div>
+          </div>
+        </div>
+
+        <!-- Client & Payment Meta -->
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; background:#f8fafc; padding:16px 20px; border-radius:10px; margin-bottom:24px; border:1px solid #e2e8f0; font-size:0.88rem;">
+          <div>
+            <div style="font-weight:700; color:#64748b; font-size:0.75rem; text-transform:uppercase;">Billed To:</div>
+            <div id="invClientName" style="font-weight:800; color:#0f172a; margin-top:2px;">Valued Client</div>
+            <div id="invClientEmail" style="color:#475569;">client@techzyncmedia.com</div>
+            <div id="invClientPhone" style="color:#475569;">+91 9372266379</div>
+          </div>
+          <div>
+            <div style="font-weight:700; color:#64748b; font-size:0.75rem; text-transform:uppercase;">Payment Gateway Details:</div>
+            <div><strong>Gateway:</strong> Razorpay PCI-DSS</div>
+            <div><strong>Payment Ref ID:</strong> <span id="invTxId" style="font-family:monospace; color:#2563eb;">pay_RzP_991827</span></div>
+            <div><strong>Status:</strong> <span style="color:#166534; font-weight:700;">SUCCESS</span></div>
+          </div>
+        </div>
+
+        <!-- Items Table -->
+        <table style="width:100%; border-collapse:collapse; margin-bottom:24px; font-size:0.9rem;">
+          <thead>
+            <tr style="background:#0f172a; color:#ffffff; text-align:left;">
+              <th style="padding:10px 14px; border-radius:6px 0 0 6px;">Service Description</th>
+              <th style="padding:10px 14px; text-align:right; border-radius:0 6px 6px 0;">Amount (INR ₹)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid #e2e8f0;">
+              <td style="padding:14px;"><strong id="invItemTitle">Business Web & API Suite Package</strong><br><span style="font-size:0.8rem; color:#64748b;">Includes Web Architecture, Java REST APIs, Technical SEO, and Security SSL Setup</span></td>
+              <td id="invItemAmount" style="padding:14px; text-align:right; font-weight:700; color:#0f172a;">₹24,999.00</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Totals Summary -->
+        <div style="display:flex; justify-content:flex-end; margin-bottom:24px;">
+          <div style="width:260px; font-size:0.9rem;">
+            <div style="display:flex; justify-content:space-between; padding:4px 0; color:#64748b;">
+              <span>Subtotal:</span>
+              <span id="invSubtotal" style="font-weight:600; color:#0f172a;">₹24,999.00</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; padding:4px 0; color:#64748b;">
+              <span>GST (18%):</span>
+              <span id="invGst" style="font-weight:600; color:#0f172a;">₹4,499.82</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; padding:8px 0; border-top:2px solid #0f172a; font-size:1.1rem; font-weight:800; color:#0f172a; margin-top:4px;">
+              <span>Total Paid:</span>
+              <span id="invTotalPaid" style="color:#2563eb;">₹29,498.82</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align:center; border-top:1px solid #e2e8f0; padding-top:16px; font-size:0.8rem; color:#94a3b8;">
+          This is a computer-generated tax invoice issued by Techzyncmedia. No signature required.
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div style="margin-top:24px; display:flex; gap:12px; justify-content:flex-end;">
+        <button onclick="closeInvoiceModal()" style="background:#f1f5f9; color:#475569; border:none; padding:10px 20px; font-weight:700; border-radius:8px; cursor:pointer;">Close</button>
+        <button onclick="printInvoice()" style="background:#2563eb; color:#ffffff; border:none; padding:10px 24px; font-weight:700; border-radius:8px; cursor:pointer; display:flex; align-items:center; gap:8px;">🖨️ Print / Save as PDF</button>
+      </div>
+
+    </div>
+  </div>
+
   <script>
     // Sample demo order history for client portal verification
     const defaultDemoOrders = [
@@ -159,7 +246,7 @@
         package: "Business Web & API Package",
         gatewayId: "pay_RzP_9918274612",
         date: "2026-08-25 14:30:12",
-        amount: "₹24,999",
+        amount: "₹29,498.82",
         status: "SUCCESS"
       },
       {
@@ -167,10 +254,12 @@
         package: "Technical SEO & Speed Audit Retainer",
         gatewayId: "pay_RzP_8812739401",
         date: "2026-08-10 11:15:00",
-        amount: "₹9,999",
+        amount: "₹11,798.82",
         status: "SUCCESS"
       }
     ];
+
+    let currentOrderList = [];
 
     document.addEventListener("DOMContentLoaded", function() {
       const email = localStorage.getItem('techzync_client_email') || 'client@techzyncmedia.com';
@@ -195,14 +284,17 @@
         gatewayId: p.transactionId,
         date: p.date,
         amount: p.amount,
-        status: p.status || "SUCCESS"
+        status: p.status || "SUCCESS",
+        clientName: p.clientName || name,
+        clientEmail: p.clientEmail || email,
+        clientPhone: p.clientPhone || "+91 9372266379"
       }));
 
-      let allOrders = [...normalizedUserPurchases, ...defaultDemoOrders];
+      currentOrderList = [...normalizedUserPurchases, ...defaultDemoOrders];
       const tbody = document.getElementById('ordersTableBody');
       tbody.innerHTML = '';
 
-      allOrders.forEach(ord => {
+      currentOrderList.forEach((ord, index) => {
         const tr = document.createElement('tr');
         tr.innerHTML = `
           <td style="font-weight:700; color:#38bdf8;">${ord.orderId}</td>
@@ -211,11 +303,55 @@
           <td style="color:#94a3b8; font-size:0.88rem;">${ord.date}</td>
           <td style="font-weight:800; color:#ffffff;">${ord.amount}</td>
           <td><span class="badge-success">✓ ${ord.status}</span></td>
-          <td><a href="#" onclick="alert('Downloading Official GST Receipt for ${ord.orderId}\\nPayment Ref: ${ord.gatewayId}'); return false;" class="btn-receipt">📄 Download Receipt</a></td>
+          <td><button onclick="openInvoiceModal(${index})" class="btn-receipt">📄 Download Receipt</button></td>
         `;
         tbody.appendChild(tr);
       });
     });
+
+    function openInvoiceModal(index) {
+      const ord = currentOrderList[index];
+      if (!ord) return;
+
+      document.getElementById("invNum").innerText = "INVOICE: " + ord.orderId;
+      document.getElementById("invDate").innerText = "Date: " + ord.date;
+      document.getElementById("invClientName").innerText = ord.clientName || "Valued Client";
+      document.getElementById("invClientEmail").innerText = ord.clientEmail || localStorage.getItem('techzync_client_email') || "client@techzyncmedia.com";
+      document.getElementById("invClientPhone").innerText = ord.clientPhone || "+91 9372266379";
+      document.getElementById("invTxId").innerText = ord.gatewayId;
+      document.getElementById("invItemTitle").innerText = ord.package;
+      document.getElementById("invItemAmount").innerText = ord.amount;
+      document.getElementById("invTotalPaid").innerText = ord.amount;
+
+      document.getElementById("invoiceModal").style.display = "flex";
+    }
+
+    function closeInvoiceModal() {
+      document.getElementById("invoiceModal").style.display = "none";
+    }
+
+    function printInvoice() {
+      const content = document.getElementById("printableInvoice").outerHTML;
+      const win = window.open("", "", "width=800,height=900");
+      win.document.write(`
+        <html>
+          <head>
+            <title>Tax Invoice - Techzyncmedia</title>
+            <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+            <style>body { font-family: 'Plus Jakarta Sans', sans-serif; padding: 40px; background:#ffffff; color:#0f172a; }</style>
+          </head>
+          <body>
+            ${content}
+          </body>
+        </html>
+      `);
+      win.document.close();
+      win.focus();
+      setTimeout(() => {
+        win.print();
+        win.close();
+      }, 500);
+    }
 
     function logoutClient() {
       localStorage.removeItem('techzync_client_logged_in');

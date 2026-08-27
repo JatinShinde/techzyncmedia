@@ -71,6 +71,9 @@ function launchRazorpayCheckout(packageKey, customerInfo = {}) {
       let existingPurchases = JSON.parse(localStorage.getItem("techzync_purchases") || "[]");
       existingPurchases.unshift(newPurchase);
       localStorage.setItem("techzync_purchases", JSON.stringify(existingPurchases));
+
+      // Clear cart
+      localStorage.removeItem("techzync_cart");
       
       // Auto set logged in user session
       localStorage.setItem("techzync_client_logged_in", "true");

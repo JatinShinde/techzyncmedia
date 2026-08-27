@@ -239,26 +239,6 @@
   </div>
 
   <script>
-    // Sample demo order history for client portal verification
-    const defaultDemoOrders = [
-      {
-        orderId: "ORD-2026-8912",
-        package: "Business Web & API Package",
-        gatewayId: "pay_RzP_9918274612",
-        date: "2026-08-25 14:30:12",
-        amount: "₹29,498.82",
-        status: "SUCCESS"
-      },
-      {
-        orderId: "ORD-2026-7734",
-        package: "Technical SEO & Speed Audit Retainer",
-        gatewayId: "pay_RzP_8812739401",
-        date: "2026-08-10 11:15:00",
-        amount: "₹11,798.82",
-        status: "SUCCESS"
-      }
-    ];
-
     let currentOrderList = [];
 
     document.addEventListener("DOMContentLoaded", function() {
@@ -276,9 +256,9 @@
         alert("🎉 Razorpay Test Payment Successful! Transaction Ref ID: " + txId + "\nYour invoice has been added to your dashboard history below.");
       }
 
-      // Load orders from Razorpay checkout + demo orders
+      // Load ONLY actual purchases made by user
       const userPurchases = JSON.parse(localStorage.getItem('techzync_purchases') || "[]");
-      const normalizedUserPurchases = userPurchases.map(p => ({
+      currentOrderList = userPurchases.map(p => ({
         orderId: p.orderId,
         package: p.packageName,
         gatewayId: p.transactionId,
@@ -290,9 +270,22 @@
         clientPhone: p.clientPhone || "+91 9372266379"
       }));
 
-      currentOrderList = [...normalizedUserPurchases, ...defaultDemoOrders];
       const tbody = document.getElementById('ordersTableBody');
       tbody.innerHTML = '';
+
+      if (currentOrderList.length === 0) {
+        tbody.innerHTML = `
+          <tr>
+            <td colspan="7" style="text-align:center; padding:48px 20px; color:#94a3b8;">
+              <div style="font-size:2rem; margin-bottom:8px;">📦</div>
+              <div style="font-weight:700; color:#ffffff; font-size:1.1rem; margin-bottom:4px;">No Purchased Packages Found</div>
+              <div>When you buy a service package online, your invoice and order history will appear here.</div>
+              <a href="/it-solutions.html#pricing" class="btn btn-primary btn-sm" style="display:inline-block; margin-top:16px; background:#2563eb; color:#ffffff; padding:10px 20px; border-radius:6px; font-weight:700; text-decoration:none;">Browse Pricing Packages &rarr;</a>
+            </td>
+          </tr>
+        `;
+        return;
+      }
 
       currentOrderList.forEach((ord, index) => {
         const tr = document.createElement('tr');

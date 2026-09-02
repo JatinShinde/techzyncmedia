@@ -211,7 +211,7 @@
           <div style="width:260px; font-size:0.9rem;">
             <div style="display:flex; justify-content:space-between; padding:4px 0; color:#64748b;">
               <span>Subtotal:</span>
-              <span id="invSubtotal" style="font-weight:600; color:#0f172a;">₹24,999.00</span>
+              <span id="invSubtotal" style="font-weight:600; color:#0f172a;">₹0.00</span>
             </div>
             <div style="display:flex; justify-content:space-between; padding:4px 0; color:#64748b;">
               <span>Taxes & Fees:</span>
@@ -219,7 +219,7 @@
             </div>
             <div style="display:flex; justify-content:space-between; padding:8px 0; border-top:2px solid #0f172a; font-size:1.1rem; font-weight:800; color:#0f172a; margin-top:4px;">
               <span>Total Paid:</span>
-              <span id="invTotalPaid" style="color:#2563eb;">₹24,999.00</span>
+              <span id="invTotalPaid" style="color:#2563eb;">₹0.00</span>
             </div>
           </div>
         </div>
@@ -230,9 +230,10 @@
       </div>
 
       <!-- Action Buttons -->
-      <div style="margin-top:24px; display:flex; gap:12px; justify-content:flex-end;">
-        <button onclick="closeInvoiceModal()" style="background:#f1f5f9; color:#475569; border:none; padding:10px 20px; font-weight:700; border-radius:8px; cursor:pointer;">Close</button>
-        <button onclick="printInvoice()" style="background:#2563eb; color:#ffffff; border:none; padding:10px 24px; font-weight:700; border-radius:8px; cursor:pointer; display:flex; align-items:center; gap:8px;">🖨️ Print / Save as PDF</button>
+      <div style="margin-top:24px; display:flex; gap:10px; justify-content:flex-end; flex-wrap:wrap;">
+        <button onclick="closeInvoiceModal()" style="background:#f1f5f9; color:#475569; border:none; padding:10px 18px; font-weight:700; border-radius:8px; cursor:pointer;">Close</button>
+        <button onclick="downloadPdfInvoice()" style="background:#0284c7; color:#ffffff; border:none; padding:10px 20px; font-weight:700; border-radius:8px; cursor:pointer; display:flex; align-items:center; gap:6px;">📥 Download PDF</button>
+        <button onclick="printInvoice()" style="background:#2563eb; color:#ffffff; border:none; padding:10px 20px; font-weight:700; border-radius:8px; cursor:pointer; display:flex; align-items:center; gap:6px;">🖨️ Print Receipt</button>
       </div>
 
     </div>
@@ -314,6 +315,7 @@
       document.getElementById("invTxId").innerText = ord.gatewayId;
       document.getElementById("invItemTitle").innerText = ord.package;
       document.getElementById("invItemAmount").innerText = ord.amount;
+      document.getElementById("invSubtotal").innerText = ord.amount;
       document.getElementById("invTotalPaid").innerText = ord.amount;
 
       document.getElementById("invoiceModal").style.display = "flex";
@@ -329,7 +331,7 @@
       win.document.write(`
         <html>
           <head>
-            <title>Tax Invoice - Techzyncmedia</title>
+            <title>Payment Receipt - Techzyncmedia</title>
             <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet">
             <style>body { font-family: 'Plus Jakarta Sans', sans-serif; padding: 40px; background:#ffffff; color:#0f172a; }</style>
           </head>
@@ -344,6 +346,36 @@
         win.print();
         win.close();
       }, 500);
+    }
+
+    function downloadPdfInvoice() {
+      const invNum = document.getElementById("invNum").innerText.replace(/[^a-zA-Z0-9_-]/g, "_");
+      const content = document.getElementById("printableInvoice").outerHTML;
+      const win = window.open("", "", "width=850,height=950");
+      win.document.write(`
+        <html>
+          <head>
+            <title>${invNum} - Techzyncmedia</title>
+            <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+            <style>
+              @page { size: auto; margin: 20mm; }
+              body { font-family: 'Plus Jakarta Sans', sans-serif; padding: 30px; background:#ffffff; color:#0f172a; }
+            </style>
+          </head>
+          <body>
+            ${content}
+            <script>
+              window.onload = function() {
+                setTimeout(function() {
+                  window.print();
+                  window.close();
+                }, 400);
+              };
+            </script>
+          </body>
+        </html>
+      `);
+      win.document.close();
     }
 
     function logoutClient() {

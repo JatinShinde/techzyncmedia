@@ -242,13 +242,20 @@
   <script>
     let currentOrderList = [];
 
-    document.addEventListener("DOMContentLoaded", function() {
+  <script>
+    let currentOrderList = [];
+
+    function loadDashboardData() {
       const email = localStorage.getItem('techzync_client_email') || 'client@techzyncmedia.com';
       const name = localStorage.getItem('techzync_client_name') || 'Valued Client';
 
-      document.getElementById('welcomeEmail').innerText = email;
-      document.getElementById('dashClientTitle').innerText = `Welcome, ${name}`;
-      document.getElementById('dashClientEmail').innerText = `Account Email: ${email}`;
+      const emailEl = document.getElementById('welcomeEmail');
+      const titleEl = document.getElementById('dashClientTitle');
+      const emailSubEl = document.getElementById('dashClientEmail');
+
+      if (emailEl) emailEl.innerText = email;
+      if (titleEl) titleEl.innerText = `Welcome, ${name}`;
+      if (emailSubEl) emailSubEl.innerText = `Account Email: ${email}`;
 
       // Check if arriving from successful payment
       const urlParams = new URLSearchParams(window.location.search);
@@ -257,14 +264,15 @@
         alert("🎉 Razorpay Test Payment Successful! Transaction Ref ID: " + txId + "\nYour invoice has been added to your dashboard history below.");
       }
 
-      // Load ONLY actual purchases made by user
-      const userPurchases = JSON.parse(localStorage.getItem('techzync_purchases') || "[]");
-      currentOrderList = userPurchases.map(p => ({
-        orderId: p.orderId,
-        package: p.packageName,
-        gatewayId: p.transactionId,
-        date: p.date,
-        amount: p.amount,
+      // Load purchases from localStorage (supporting both techzync_purchases & techzync_client_orders)
+      const userPurchases = JSON.parse(localStorage.getItem('techzync_purchases') || localStorage.getItem('techzync_client_orders') || "[]");
+      
+      currentOrderList = userPurchases.map((p, idx) => ({
+        orderId: p.orderId || p.id || ("TZ-" + (200000 + idx)),
+        package: p.packageName || p.package || "Custom IT Package",
+        gatewayId: p.transactionId || p.gatewayId || "pay_RzP_test",
+        date: p.date || new Date().toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' }),
+        amount: p.amount || "₹24,999.00",
         status: p.status || "SUCCESS",
         clientName: p.clientName || name,
         clientEmail: p.clientEmail || email,
@@ -272,6 +280,7 @@
       }));
 
       const tbody = document.getElementById('ordersTableBody');
+      if (!tbody) return;
       tbody.innerHTML = '';
 
       if (currentOrderList.length === 0) {
@@ -301,7 +310,13 @@
         `;
         tbody.appendChild(tr);
       });
-    });
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", loadDashboardData);
+    } else {
+      loadDashboardData();
+    }
 
     function openInvoiceModal(index) {
       const ord = currentOrderList[index];

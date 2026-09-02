@@ -10,24 +10,24 @@ const PACKAGES = {
     id: "starter",
     name: "Starter Package",
     price: 9999,
-    gst: 1799.82,
-    total: 11798.82,
+    gst: 0,
+    total: 9999,
     description: "Essential Web App & Security Audit"
   },
   business: {
     id: "business",
     name: "Business Package",
     price: 24999,
-    gst: 4499.82,
-    total: 29498.82,
+    gst: 0,
+    total: 24999,
     description: "Custom Web & Java Spring Boot API Suite"
   },
   enterprise: {
     id: "enterprise",
     name: "Enterprise Package",
     price: 49999,
-    gst: 8999.82,
-    total: 58998.82,
+    gst: 0,
+    total: 49999,
     description: "Full Platform Engineering & Retainer Support"
   }
 };
@@ -58,7 +58,7 @@ function launchRazorpayCheckout(packageKey, customerInfo = {}) {
         date: new Date().toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' }),
         amount: "₹" + finalTotal.toLocaleString('en-IN', {minimumFractionDigits: 2}),
         subtotal: customerInfo.subtotal || pkg.price,
-        gstAmount: customerInfo.gstAmount || pkg.gst,
+        gstAmount: 0,
         addOns: customerInfo.addOns || [],
         status: "SUCCESS",
         clientName: customerInfo.name || "Valued Client",

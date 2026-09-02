@@ -83,7 +83,6 @@ function renderCartDrawer() {
   const cart = getCart();
   const itemsContainer = document.getElementById("cartDrawerItems");
   const subtotalEl = document.getElementById("cartSubtotal");
-  const gstEl = document.getElementById("cartGst");
   const totalEl = document.getElementById("cartTotal");
 
   if (!itemsContainer) return;
@@ -97,7 +96,6 @@ function renderCartDrawer() {
       </div>
     `;
     if (subtotalEl) subtotalEl.innerText = "₹0.00";
-    if (gstEl) gstEl.innerText = "₹0.00";
     if (totalEl) totalEl.innerText = "₹0.00";
     return;
   }
@@ -125,12 +123,10 @@ function renderCartDrawer() {
     `;
   }).join("");
 
-  const gst = subtotal * 0.18;
-  const total = subtotal + gst;
+  const total = subtotal;
 
   if (subtotalEl) subtotalEl.innerText = "₹" + subtotal.toLocaleString('en-IN') + ".00";
-  if (gstEl) gstEl.innerText = "₹" + gst.toLocaleString('en-IN', {minimumFractionDigits:2});
-  if (totalEl) totalEl.innerText = "₹" + total.toLocaleString('en-IN', {minimumFractionDigits:2});
+  if (totalEl) totalEl.innerText = "₹" + total.toLocaleString('en-IN') + ".00";
 }
 
 function initCartUI() {
@@ -188,8 +184,8 @@ function initCartUI() {
           <span id="cartSubtotal" style="color:#ffffff;">₹0.00</span>
         </div>
         <div style="display:flex; justify-content:space-between; margin-bottom:12px; font-size:0.9rem; color:#94a3b8;">
-          <span>GST (18%)</span>
-          <span id="cartGst" style="color:#ffffff;">₹0.00</span>
+          <span>Taxes</span>
+          <span style="color:#10b981; font-weight:700;">Included</span>
         </div>
         <div style="display:flex; justify-content:space-between; margin-bottom:20px; font-size:1.15rem; font-weight:800;">
           <span>Total Amount</span>

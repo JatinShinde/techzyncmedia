@@ -340,16 +340,16 @@
             <span id="sumAddons">₹0.00</span>
           </div>
           <div class="summary-row">
-            <span>GST (18%)</span>
-            <span id="sumGst">₹4,499.82</span>
-          </div>
-          <div class="summary-row">
             <span>Platform & Setup Fee</span>
             <span style="color:#10b981; font-weight:700;">FREE</span>
           </div>
+          <div class="summary-row">
+            <span>Taxes & Fees</span>
+            <span style="color:#10b981; font-weight:700;">Inclusive</span>
+          </div>
           <div class="summary-row total">
             <span>Total Payable Amount</span>
-            <span id="sumTotal" style="color:#38bdf8;">₹29,498.82</span>
+            <span id="sumTotal" style="color:#38bdf8;">₹24,999.00</span>
           </div>
 
           <div style="margin-top:20px; background:#0f172a; padding:14px 16px; border-radius:8px; border:1px solid #334155; font-size:0.85rem; color:#94a3b8;">
@@ -496,8 +496,8 @@
       });
 
       calculatedSubtotal = baseSubtotal + addonsSum;
-      calculatedGst = calculatedSubtotal * 0.18;
-      calculatedTotal = calculatedSubtotal + calculatedGst;
+      calculatedGst = 0;
+      calculatedTotal = calculatedSubtotal;
 
       document.getElementById("sumSubtotal").innerText = "₹" + baseSubtotal.toLocaleString('en-IN') + ".00";
       
@@ -509,7 +509,6 @@
         addonsRow.style.display = "none";
       }
 
-      document.getElementById("sumGst").innerText = "₹" + calculatedGst.toLocaleString('en-IN', {minimumFractionDigits:2});
       document.getElementById("sumTotal").innerText = "₹" + calculatedTotal.toLocaleString('en-IN', {minimumFractionDigits:2});
     }
 
